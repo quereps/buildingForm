@@ -47,14 +47,16 @@ const showResultModule  = (function ($, ksAPI) {
         this.addMenu(this.buttons);
         
         this.show = function(settings){
-            this.getAData(settings);
+            return this.getAData(settings);
         }
 		
 		return this;
 	}
 	
 	const refresh = function(id, settings){
-        interfaces[id].show(settings);
+        let toShow = interfaces[id].show(settings);
+
+        showResult("#main_frame", toShow)
 	}
 	
 	const init = function(){
