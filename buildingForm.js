@@ -663,7 +663,7 @@ const init = function(){
 	
 	
 
-	jQuery.getScript("https://worldappproject.com/florian/JavaScript/BuildingForm/answerRandomly.js", function() {
+	jQuery.getScript("./BuildingForm/answerRandomly.js", function() {
 	   console.log("answerRandomly.js Script loaded but not necessarily executed.");
 	   
 		if (typeof listOfText != 'undefined' && listOfText) {
