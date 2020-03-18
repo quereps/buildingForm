@@ -9,8 +9,7 @@ const showResultModule  = (function ($, ksAPI) {
 	let interfaces = {};
 	
 	const showInterface = function(id, a){
-		console.log("a :",a);
-		
+
 		this.id = id;
 		this.questionList = a;
 		this.getAData = function(prop){
@@ -29,13 +28,11 @@ const showResultModule  = (function ($, ksAPI) {
 			for(but in buttons){
 				buttonsToAdd = buttonsToAdd + buttons[but];
 			}
-
-			
+            jQuery(".showResultMenu").remove();
 			jQuery("#showResult").prepend("<div id='showResultMenu'>"+buttonsToAdd+"</div>");
 		}
 		
 		jQuery(".showResult").remove();
-		console.log(a);
 		
 		this.labelBtn = "<button id='"+this.id+"' onClick='showResultModule.Refresh(\""+this.id+"\",\"labels\")'>Labels</button>";
 		
@@ -53,6 +50,8 @@ const showResultModule  = (function ($, ksAPI) {
 	}
 	
 	const refresh = function(id, settings){
+
+        console.log(interfaces);
 		console.log("id: ",id);
 		console.log("settings: ",settings); 
 	}
