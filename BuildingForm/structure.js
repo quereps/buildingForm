@@ -13,14 +13,15 @@ const getStructure = function(){
 			this.questionLabel = jQuery(vpGetLabel(this.ref)).html().split('</span>')[1];
 			this.listOfText = {};
 			this.identifier = vpGetIdentifierByReference(this.ref);
-			this.nbOfAnswers = Object.keys(vpGetStructure().questionsMap[this.id].answers).length;
+            this.nbOfAnswers = Object.keys(vpGetStructure().questionsMap[this.id].answers).length;
+            
 			this.getBestRef = function(){
 				let toreturn = this.ref;
 				this.identifier ? toreturn = this.identifier : toreturn = this.ref;	
 				return toreturn;
 			}
 			this.bestRef = this.getBestRef();
-			
+			this.piping = "{"+this.bestRef+"}";
 			
 			
 			this.answers = {}

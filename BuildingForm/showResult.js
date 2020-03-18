@@ -36,6 +36,7 @@ const showResultModule  = (function ($, ksAPI) {
 		
         this.labelBtn = "<button class='htmlButton' id='"+this.id+"' onClick='showResultModule.Refresh(\""+this.id+"\",\"questionLabel\")'>Labels</button>";
         this.bestRefBtn = "<button class='htmlButton' id='"+this.id+"' onClick='showResultModule.Refresh(\""+this.id+"\",\"bestRef\")'>Ref</button>";
+        this.pipingBtn = "<button class='htmlButton' id='"+this.id+"' onClick='showResultModule.Refresh(\""+this.id+"\",\"piping\")'>Piping</button>";
 		
 		this.buttons = [this.labelBtn,this.bestRefBtn];
 		
