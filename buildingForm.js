@@ -295,52 +295,6 @@ const tableObj = function(name){
 }
 
 const buildingFormsModule = (function ($, ksAPI) {
-	/*
-	let buttonsTypes = {};
-	let buttons = {};
-	
-	
-	const buttonTypeObj = function(click,icon){
-		
-		this.click = click;
-		this.icon = icon;
-		
-		return this;
-	}
-	
-	
-	const buttonObj = function(qid,type){
-		
-		this.qid = qid;
-		this.type=type;
-		this.html="";
-		
-		this.updateHTML = function(){
-			this.html="<div class='"+this.type.icon+" icon' onclick='"+this.type.click+"'></div>";
-			return this.html;
-		}
-		
-		this.displayButton = function(){
-			this.updateHTML();
-			//console.log(this.html);
-			//console.log(jQuery("questionDivEntireId"+qid));
-			
-			if(qid=="page"){
-				jQuery("#buildtoolsMain").append(this.html);
-			}
-			else{
-				jQuery("#questionDivEntireId"+qid).find(".buildtools").append(this.html);
-			}
-		}
-		
-		return this;
-	}
-
-*/
-
-
-
-
 
 var getWorkflow = function(){
 	
@@ -505,7 +459,7 @@ const getQuestionsOnPage = function(){
 
 const createToolBar = function(){
 	
-	jQuery("#main_frame").prepend("<div class='buildtools' id='buildtoolsMain'></div>");
+	jQuery("body").prepend("<div class='buildtools' id='buildtoolsMain'></div>");
 
 	let questionList = getQuestionsOnPage();
 		
@@ -713,8 +667,6 @@ return {
 
 
 (function($, ksAPI){ksAPI.runCustomCode(function (){ 
-	
-	//jQuery("body").append("<style></style>");
 	
 	if (!vpIsRbr()){
             buildingFormsModule.Run();
