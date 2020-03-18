@@ -37,7 +37,7 @@ const showResultModule  = (function ($, ksAPI) {
 		jQuery(".showResult").remove();
 		console.log(a);
 		
-		this.labelBtn = "<button id='"+this.id+"' onClick='showResultModule.Refresh("+this.id+",\'labels\')'>Labels</button>";
+		this.labelBtn = "<button id='"+this.id+"' onClick='showResultModule.Refresh("+this.id+",\"labels\")'>Labels</button>";
 		
 		this.buttons = [this.labelBtn];
 		
