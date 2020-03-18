@@ -3,6 +3,20 @@ jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/randexp.js
 });
 
 
+// Create new link Element 
+var link = document.createElement('link');  
+  
+// set the attributes for link element 
+   link.rel = 'stylesheet';  
+
+link.type = 'text/css'; 
+
+link.href = 'https://quereps.github.io/buildingForm/BuildingForm/interface/icons.css';  
+
+// Get HTML head element to append  
+// link element to it  
+document.getElementsByTagName('HEAD')[0].appendChild(link);
+
 var getQIdentifierTextContain = function(a){
 	
 	var result=[];
