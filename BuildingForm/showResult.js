@@ -44,16 +44,18 @@ const showResultModule  = (function ($, ksAPI) {
 		
 		this.getAData("bestRef");
 		
-		this.addMenu(this.buttons);
+        this.addMenu(this.buttons);
+        
+        this.show = function(settings){
+            console.log("settings", settings);
+
+        }
 		
 		return this;
 	}
 	
 	const refresh = function(id, settings){
-
-        console.log(interfaces);
-		console.log("id: ",id);
-		console.log("settings: ",settings); 
+        interfaces[id].show(settings);
 	}
 	
 	const init = function(){
