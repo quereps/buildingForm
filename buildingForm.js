@@ -1,4 +1,4 @@
-jQuery.getScript("https://worldappproject.com/florian/JavaScript/BuildingForm/randexp.js", function() {
+jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/randexp.js", function() {
    console.log("Randexp Script loaded but not necessarily executed.");
 });
 
@@ -612,19 +612,19 @@ const getScoreFormula = function(){ //USE TABLE SOME TIME
  
 const init = function(){
 	
-	jQuery.getScript("https://worldappproject.com/florian/JavaScript/BuildingForm/showResult.js", function() {
+	jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/showResult.js", function() {
 	   console.log("showResult.js Script loaded but not necessarily executed.");
 	   
 	   showResultModule.Start();
 	});
 	
-	jQuery.getScript("https://worldappproject.com/florian/JavaScript/BuildingForm/buttons.js", function() {
+	jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/buttons.js", function() {
 	   console.log("buttons.js Script loaded but not necessarily executed.");
 	   
 	   buttonModule.NewType("getScoreFormula","buildingFormsModule.getScoreFormula()","getScoreFormula");
 	   buttonModule.New("getScoreFormula","page","getScoreFormula");
 	   
-	   jQuery.getScript("https://worldappproject.com/florian/JavaScript/BuildingForm/createDMTable.js", function() {
+	   jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/createDMTable.js", function() {
 	   console.log("createDMTable.js Script loaded but not necessarily executed.");
 	   
 	   createDMTable.Start();
@@ -648,13 +648,13 @@ const init = function(){
 	//buttons[getScoreFormula].displayButton();
 	 
 	
-	jQuery.getScript("https://worldappproject.com/florian/JavaScript/BuildingForm/structure.js", function() {
+	jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/structure.js", function() {
 	   console.log("structue.js Script loaded but not necessarily executed.");
 		structure = getStructure();
 	});
 	
 	
-	jQuery.getScript("https://worldappproject.com/florian/JavaScript/BuildingForm/summaryTable.js", function() {
+	jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/summaryTable.js", function() {
 	   console.log("summaryTable.js Script loaded but not necessarily executed.");
 		summaryTableModule.Start();
 	});
@@ -663,7 +663,7 @@ const init = function(){
 	
 	
 
-	jQuery.getScript("./BuildingForm/answerRandomly.js", function() {
+	jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/answerRandomly.js", function() {
 	   console.log("answerRandomly.js Script loaded but not necessarily executed.");
 	   
 		if (typeof listOfText != 'undefined' && listOfText) {
