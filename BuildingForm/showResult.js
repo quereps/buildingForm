@@ -34,7 +34,7 @@ const showResultModule  = (function ($, ksAPI) {
 		
 		jQuery(".showResult").remove();
 		
-		this.labelBtn = "<button id='"+this.id+"' onClick='showResultModule.Refresh(\""+this.id+"\",\"labels\")'>Labels</button>";
+		this.labelBtn = "<button id='"+this.id+"' onClick='showResultModule.Refresh(\""+this.id+"\",\"questionLabel\")'>Labels</button>";
 		
 		this.buttons = [this.labelBtn];
 		
@@ -42,13 +42,12 @@ const showResultModule  = (function ($, ksAPI) {
 		
 		jQuery("#main_frame").prepend("<div id='showResult'><div class='result'></div><div class='close' onclick='jQuery(this).parent().remove()'>Close</div>");
 		
-		this.getAData("bestRef");
+		
 		
         this.addMenu(this.buttons);
         
         this.show = function(settings){
-            console.log("settings", settings);
-
+            this.getAData(settings);
         }
 		
 		return this;
