@@ -57,7 +57,8 @@ const showResultModule  = (function ($, ksAPI) {
 	const refresh = function(id, settings){
         let toShow = interfaces[id].show(settings);
         console.log("toShow: ",toShow);
-        showResult("#main_frame", toShow)
+        //showResult("#main_frame", toShow)
+        jQuery(".showResult").prepend(toShow);
 	}
 	
 	const init = function(){
