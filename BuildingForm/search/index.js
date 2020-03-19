@@ -37,12 +37,19 @@ const searchModule = (function ($, ksAPI) {
         tableToConsole(result);
     }
 
-	const init = function(){
+    const launch = function(){
+       console.log("launching Search Module");
+    }
 
+
+	const init = function(){
+        buttonModule.NewType("search","searchModule.Launch()","search");
+        buttonModule.New("search","page","search");
     }
     
 	return{
-		Start:function(){init()}
+        Start:function(){init()},
+        Launch:function(){launch()}
 	}
 	
 })(jQuery, ksAPI);
