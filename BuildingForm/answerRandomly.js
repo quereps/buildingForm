@@ -205,7 +205,9 @@ const answerRandomlyModule = (function ($, ksAPI) {
 		
 	}
 	
-		
+    const randomNumber = function(a){
+        return Math.floor(Math.random() * a);
+    };
 
 	const init = function(settings){
 		

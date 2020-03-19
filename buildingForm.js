@@ -17,27 +17,7 @@ link.href = 'https://quereps.github.io/buildingForm/BuildingForm/interface/icons
 // link element to it  
 document.getElementsByTagName('HEAD')[0].appendChild(link);
 
-var getQIdentifierTextContain = function(a){
-	
-	var result=[];
-	
 
-	for(var i in structure){
-
-		var string = JSON.stringify(structure[i].questionLabel);
-		
-		if(string.indexOf(a)>0){
-			result.push(structure[i]);
-		}
-		
-		
-	}
-	
-	result.sort();
-	
-	showResultModule.showInterface("searchResult",result);
-	
-}
 
 
 
@@ -101,9 +81,7 @@ function selectText(containerid) {
     }
 }
 
-const randomNumber = function(a){
-	return Math.floor(Math.random() * a);
-};
+
 
 
 	
@@ -127,33 +105,6 @@ const randomNumber = function(a){
 
 	}
 	
-
-
-var events = {
-  events: {},
-  on: function (eventName, fn) {
-    this.events[eventName] = this.events[eventName] || [];
-    this.events[eventName].push(fn);
-  },
-  off: function(eventName, fn) {
-    if (this.events[eventName]) {
-      for (var i = 0; i < this.events[eventName].length; i++) {
-        if (this.events[eventName][i] === fn) {
-          this.events[eventName].splice(i, 1);
-          break;
-        }
-      };
-    }
-  },
-  emit: function (eventName, data) {
-    if (this.events[eventName]) {
-      this.events[eventName].forEach(function(fn) {
-        fn(data);
-      });
-    }
-  }
-};
-
 
 
 const fromObjToHTML = function(obj){
@@ -333,39 +284,6 @@ var tableToText = function(a){
 
 
 
-var getQIdentifierThatContain = function(a,b){
-	
-	
-	var result=[];
-	var listOfidentifiers = Object.keys(vpGetIdentifiersMap());
-	
-	
-	
-	for(var i in listOfidentifiers){
-
-		var string = JSON.stringify(listOfidentifiers[i]);
-		
-		if(b){
-			
-			if(string.indexOf(a)>0 && string.indexOf(b)>0){
-				result.push(listOfidentifiers[i]);
-			}
-			
-		}
-		
-		else{
-			if(string.indexOf(a)>0){
-				result.push(listOfidentifiers[i]);
-			}
-		}
-		
-	}
-	
-	result.sort();
-	console.log(result);
-	tableToConsole(result);
-	
-}
 
 
 
@@ -560,7 +478,7 @@ const getScoreFormula = function(){ //USE TABLE SOME TIME
  
  
  
- const initTextToUse = function(){
+ /*const initTextToUse = function(){
 	 
 	 if(listOfText){
 		 let finalTextToUse;
@@ -575,7 +493,7 @@ const getScoreFormula = function(){ //USE TABLE SOME TIME
 		 
 	 }
 
- }
+ }*/
 
  
 const init = function(){
@@ -593,11 +511,16 @@ const init = function(){
 	   buttonModule.New("getScoreFormula","page","getScoreFormula");
 	   
 	   jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/createDMTable.js", function() {
-	   console.log("createDMTable.js Script loaded but not necessarily executed.");
+	        console.log("createDMTable.js Script loaded but not necessarily executed.");
 	   
-	   createDMTable.Start();
+	        createDMTable.Start();
 	   
-	});
+        });
+    
+        jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/summaryTable.js", function() {
+            console.log("summaryTable.js Script loaded but not necessarily executed.");
+            summaryTableModule.Start();
+        });
 	   
 	});
 	
@@ -619,13 +542,18 @@ const init = function(){
 	jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/structure.js", function() {
 	   console.log("structue.js Script loaded but not necessarily executed.");
 		structure = getStructure();
-	});
+    });
+    
+    jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/search/index.js", function() {
+        console.log("searchModule Script loaded but not necessarily executed.");
+        searchModule.Start();
+     });
+     
+
+    
 	
 	
-	jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/summaryTable.js", function() {
-	   console.log("summaryTable.js Script loaded but not necessarily executed.");
-		summaryTableModule.Start();
-	});
+	
 	
 	
 	
