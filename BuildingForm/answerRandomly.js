@@ -10,7 +10,7 @@ const answerRandomlyModule = (function ($, ksAPI) {
 
 	const answerLookup = function (question){
 
-					let Qref = question.question;
+					let Qref = question.ref;
 					let nbOfAnswers = question.nbOfAnswers;
 					let the_id = question.id;
 					let the_ref = Qref; 
@@ -33,7 +33,7 @@ const answerRandomlyModule = (function ($, ksAPI) {
 	const answerCheckOnce = function (question){
 		
 		
-		let Qref = question.question;
+		let Qref = question.ref;
 		let nbOfAnswers = question.nbOfAnswers;
 		
 		console.log(Qref);
@@ -47,7 +47,7 @@ const answerRandomlyModule = (function ($, ksAPI) {
 	}
 	
 	const answerCheckColumns = function (question){
-		let Qref = question.question;
+		let Qref = question.ref;
 		let nbOfAnswers = question.nbOfAnswers;
 		
 		for(var i=0;i<nbOfAnswers;i++){
@@ -61,7 +61,7 @@ const answerRandomlyModule = (function ($, ksAPI) {
 	
 	const answerCheckMultiple = function (question){
 		console.log(question);
-		let Qref = question.question;
+		let Qref = question.ref;
 		let nbOfAnswers = question.nbOfAnswers;
 		
 					for(var i=0;i<nbOfAnswers;i++){
@@ -78,7 +78,7 @@ const answerRandomlyModule = (function ($, ksAPI) {
 	const answerFillWithText = function (question){
 
 		let id = question.id;
-		let Qref = question.question;
+		let Qref = question.ref;
 		let nbOfAnswers = question.nbOfAnswers;
 		let listOfText = question.listOfText;
 
@@ -142,7 +142,7 @@ const answerRandomlyModule = (function ($, ksAPI) {
 	const answerFillWithCom = function (question){
 					
 					let id = question.id;
-					let Qref = question.question;
+					let Qref = question.ref;
 					let nbOfAnswers = question.nbOfAnswers;
 					let listOfText = question.listOfText;
 
