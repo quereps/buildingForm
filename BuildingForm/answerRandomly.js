@@ -36,6 +36,8 @@ const answerRandomlyModule = (function ($, ksAPI) {
 		let Qref = question.question;
 		let nbOfAnswers = question.nbOfAnswers;
 		
+		console.log(Qref);
+
 		var toCheck = Math.floor((Math.random() * nbOfAnswers) + 1);
 					
 					if(vpGetResults(Qref).length==0){
