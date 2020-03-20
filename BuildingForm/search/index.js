@@ -37,6 +37,22 @@ const searchModule = (function ($, ksAPI) {
         tableToConsole(result);
     }
 
+
+    const sameKind = function(a){
+	
+		let id = a.id.split("sameKind")[1];
+		let type = vpGetStructure().questionsMap[id].type;
+		let answers = [];
+		
+		let answersList = vpGetStructure().questionsMap[id].answers;
+		for(let i in answersList){
+			answers.push(answersList[i].name);
+		}
+
+		buildingFormsModule.showResult("#main_frame",buildingFormsModule.tableToText(getSimilarQuestion(type,answers,"ref")));
+	
+	}
+
     const launch = function(){
        console.log("launching Search Module");
     }

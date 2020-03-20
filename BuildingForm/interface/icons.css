@@ -121,3 +121,11 @@ div.icon.random{
 .sumtable.icon {
     background: url(https://app.form.com/User/55/578055/media/91/197191.png)
 }
+
+/* Start - Change form design for the tool */
+.H2,.H22 {
+    width: calc(100% - 130px) !important;
+    display: block;
+}
+
+/* End - Change form design for the tool */
