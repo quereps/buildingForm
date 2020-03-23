@@ -502,26 +502,26 @@ const getScoreFormula = function(){ //USE TABLE SOME TIME
 const init = function(){
 	
 	jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/showResult.js", function() {
-	   console.log("showResult.js Script loaded but not necessarily executed.");
+        notif("showResult.js Script loaded but not necessarily executed.");
 	   
 	   showResultModule.Start();
 	});
 	
 	jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/buttons.js", function() {
-	   console.log("buttons.js Script loaded but not necessarily executed.");
+        notif("buttons.js Script loaded but not necessarily executed.");
 	   
 	   buttonModule.NewType("getScoreFormula","buildingFormsModule.getScoreFormula()","getScoreFormula");
 	   buttonModule.New("getScoreFormula","page","getScoreFormula");
 	   
 	   jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/createDMTable.js", function() {
-	        console.log("createDMTable.js Script loaded but not necessarily executed.");
+        notif("createDMTable.js Script loaded but not necessarily executed.");
 	   
 	        createDMTable.Start();
 	   
         });
     
         jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/summaryTable.js", function() {
-            console.log("summaryTable.js Script loaded but not necessarily executed.");
+            notif("summaryTable.js Script loaded but not necessarily executed.");
             summaryTableModule.Start();
         });
 	   
@@ -543,12 +543,12 @@ const init = function(){
 	 
 	
 	jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/structure.js", function() {
-	   console.log("structue.js Script loaded but not necessarily executed.");
+        notif("structue.js Script loaded but not necessarily executed.");
 		structure = getStructure();
     });
     
     jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/search/index.js", function() {
-        console.log("searchModule Script loaded but not necessarily executed.");
+        notif("searchModule Script loaded but not necessarily executed.");
         searchModule.Start();
      });
     
@@ -564,7 +564,7 @@ const init = function(){
 	
 
 	jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/answerRandomly.js", function() {
-	   console.log("answerRandomly.js Script loaded but not necessarily executed.");
+	   notif("answerRandomly.js Script loaded but not necessarily executed.");
 	   
 		if (typeof listOfText != 'undefined' && listOfText) {
 			answerRandomlyModule.Run(listOfText);
