@@ -620,3 +620,5 @@ const notif = function(a){
         jQuery("#notif"+(nb+1)).remove();
      }, 3000);
 }
+
+jQuery("body").append("<style>#notification {position:absolute;bottom:0px;width:calc(100% - 60px);text-align:center;background:rgba(255,255,255,0.75);padding:10px;border-top:1px solid #999;}#notification:empty{display:none;}html {position: relative;}</style>");
