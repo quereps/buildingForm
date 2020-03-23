@@ -2,17 +2,18 @@
 const showResultModule  = (function ($, ksAPI) {
 	
 	var showResult = function(a,b){
-		jQuery(".showResult").remove();
-		jQuery(a).prepend("<div class='showResult'><div class='result'>"+b+"</div><div class='close' onclick='jQuery(this).parent().remove()'>Close</div>");
+		//jQuery(".showResult").remove();
+		//jQuery(a).prepend("<div class='showResult'><div class='result'>"+b+"</div><div class='close' onclick='jQuery(this).parent().remove()'>Close</div>");
 	}
 	
 	let interfaces = {};
 	
-	const showInterface = function(id, a){
+	const createInterface = function(id, questionArray){
 
 		this.id = id;
-		this.questionList = a;
-		this.getAData = function(prop){
+        this.questionList = questionArray;
+        
+		this.getAData = function(prop){ // return a specific prop of the question object (label, identifier, Qref)
 			let toReturn = [];
 			
 			for(question in this.questionList){
@@ -20,7 +21,8 @@ const showResultModule  = (function ($, ksAPI) {
 			}
 			
 			return toReturn;
-		}
+        }
+        
 		this.addMenu = function(buttons){
 			console.log("addMenu", buttons);
 			let buttonsToAdd = "";
@@ -28,11 +30,11 @@ const showResultModule  = (function ($, ksAPI) {
 			for(but in buttons){
 				buttonsToAdd = buttonsToAdd + buttons[but];
 			}
-            jQuery(".showResultMenu").remove();
+            jQuery("#showResultMenu").remove();
 			jQuery("#showResult").prepend("<div id='showResultMenu'>"+buttonsToAdd+"</div>");
 		}
 		
-		jQuery(".showResult").remove();
+		jQuery("#showResult").remove();
 		
         this.labelBtn = "<button class='htmlButton' id='"+this.id+"' onClick='showResultModule.Refresh(\""+this.id+"\",\"questionLabel\")'>Labels</button>";
         this.bestRefBtn = "<button class='htmlButton' id='"+this.id+"' onClick='showResultModule.Refresh(\""+this.id+"\",\"bestRef\")'>Ref</button>";
@@ -62,8 +64,8 @@ const showResultModule  = (function ($, ksAPI) {
 	
 	return {
 		Start:function(){init()},
-		showResult:function(a,b){showResult(a,b)},
-		showInterface:function(id,a){interfaces[id] = new showInterface(id,a)},
+		showInterface:function(a,b){showInterface(interfaceId)},
+		createInterface:function(id,a){interfaces[id] = new createInterface(id,a)},
 		Refresh:function(id,settings){refresh(id,settings)}
 	}
 	
