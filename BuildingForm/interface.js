@@ -1,5 +1,5 @@
 
-const showResultModule  = (function ($, ksAPI) {
+const InterfaceModule  = (function ($, ksAPI) {
 	
 	var showResult = function(a,b){
 		//jQuery(".showResult").remove();

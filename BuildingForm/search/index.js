@@ -10,7 +10,7 @@ const searchModule = (function ($, ksAPI) {
         }
         
         result.sort();
-        showResultModule.showInterface("searchResult",result);
+        InterfaceModule.createInterface("searchResult",result);
     }
 
     const getQIdentifierThatContain = function(a,b){
