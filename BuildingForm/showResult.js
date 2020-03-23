@@ -40,11 +40,7 @@ const showResultModule  = (function ($, ksAPI) {
 		
 		this.buttons = [this.labelBtn,this.bestRefBtn,this.pipingBtn];
 		
-		
-		
-		jQuery("#main_frame").prepend("<div id='showResult'><div class='result'></div><div class='close' onclick='jQuery(this).parent().remove()'>Close</div>");
-		
-		
+		jQuery("#main_frame").prepend("<div id='showResult'><div class='result'></div><div class='close' onclick='jQuery(this).parent().remove()'></div>");
 		
         this.addMenu(this.buttons);
         
@@ -57,8 +53,6 @@ const showResultModule  = (function ($, ksAPI) {
 	
 	const refresh = function(id, settings){
         let toShow = interfaces[id].show(settings);
-        console.log("toShow2: ",toShow);
-        //showResult("#main_frame", toShow)
         jQuery(".result").html(toShow);
 	}
 	

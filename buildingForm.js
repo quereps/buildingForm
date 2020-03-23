@@ -614,6 +614,8 @@ return {
 
 
 const notif = function(a){
+
+    console.log(a);
     let nb = jQuery("#notification div").length;
     jQuery("#notification").append("<div class='notif' id='notif"+(nb+1)+"'>"+a+"</div>");
     setTimeout(function(){ 

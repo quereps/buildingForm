@@ -59,6 +59,9 @@ const searchModule = (function ($, ksAPI) {
 
 
 	const init = function(){
+
+        notif("Search Init");
+
         buttonModule.NewType("search","searchModule.Launch()","search");
         buttonModule.New("search","page","search");
     }
