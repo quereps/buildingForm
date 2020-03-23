@@ -615,8 +615,8 @@ return {
 
 const notif = function(a){
     let nb = jQuery("#notification div").length;
-    jQuery("#notification").append("<div id='notif"+(nb+1)+"'>"+a+"</div>");
+    jQuery("#notification").append("<div class='notif' id='notif"+(nb+1)+"'>"+a+"</div>");
     setTimeout(function(){ 
-        jQuery("notif"+(nb+1)).remove();
+        jQuery("#notif"+(nb+1)).remove();
      }, 3000);
 }
