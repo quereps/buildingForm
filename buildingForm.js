@@ -613,7 +613,7 @@ return {
 
 
 
-const notification = function(a){
+const notif = function(a){
     let nb = jQuery("#notification div").length;
     jQuery("#notification").append("<div id='notif"+(nb+1)+"'>"+a+"</div>");
     setTimeout(function(){ 
