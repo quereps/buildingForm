@@ -552,7 +552,7 @@ const init = function(){
         searchModule.Start();
      });
     
-     jQuery(html).append("<div id='notification'></div>");
+     jQuery("html").append("<div id='notification'></div>");
 
     
 	
