@@ -4,22 +4,20 @@ jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/randexp.js
 
 
 // Create new link Element 
-var link = document.createElement('link');  
+////var link = document.createElement('link');  
   
 // set the attributes for link element 
-   link.rel = 'stylesheet';  
+ ////  link.rel = 'stylesheet';  
 
-link.type = 'text/css'; 
+////link.type = 'text/css'; 
 
-link.href = 'https://quereps.github.io/buildingForm/BuildingForm/interface/icons.css';  
+////link.href = 'https://quereps.github.io/buildingForm/BuildingForm/interface/icons.css';  
 
 // Get HTML head element to append  
 // link element to it  
-document.getElementsByTagName('HEAD')[0].appendChild(link);
+////document.getElementsByTagName('HEAD')[0].appendChild(link);
 
-
-
-
+       
 
 let structure = {};
  
@@ -500,6 +498,15 @@ const getScoreFormula = function(){ //USE TABLE SOME TIME
 
  
 const init = function(){
+
+
+    $("head").append("<link>");
+       var css = $("head").children(":last");
+       css.attr({
+         rel:  "stylesheet",
+         type: "text/css",
+         href: "https://quereps.github.io/buildingForm/BuildingForm/interface/icons.css"
+      });
 	
 	jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/showResult.js", function() {
         notif("showResult.js Script loaded but not necessarily executed.");
