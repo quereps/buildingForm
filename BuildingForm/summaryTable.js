@@ -7,7 +7,7 @@ const summaryTableModule  = (function ($, ksAPI) {
 	} 
 	
 	const launch = function(){
-		console.log("Go Sum");
+		notif("Go Sum");
 	}
 
 	return {
