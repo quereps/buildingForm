@@ -54,7 +54,7 @@ const searchModule = (function ($, ksAPI) {
 	}
 
     const launch = function(){
-       console.log("launching Search Module");
+       notif("launching Search Module");
     }
 
 

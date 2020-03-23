@@ -532,6 +532,12 @@ const init = function(){
             summaryTableModule.Start();
         });
 	   
+		jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/search/index.js", function() {
+			console.log("searchModule Script loaded but not necessarily executed.");
+			searchModule.Start();
+	 	});
+	 
+
 	});
 	
 	
@@ -554,10 +560,7 @@ const init = function(){
 		structure = getStructure();
     });
     
-    jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/search/index.js", function() {
-        console.log("searchModule Script loaded but not necessarily executed.");
-        searchModule.Start();
-     });
+    
     
      jQuery("html").append("<div id='notification'></div>");
 
