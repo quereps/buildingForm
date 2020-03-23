@@ -495,6 +495,9 @@ const getScoreFormula = function(){ //USE TABLE SOME TIME
 
  }*/
 
+
+
+
  
 const init = function(){
 	
@@ -548,7 +551,8 @@ const init = function(){
         console.log("searchModule Script loaded but not necessarily executed.");
         searchModule.Start();
      });
-     
+    
+     jQuery(html).append("<div id='notification'></div>");
 
     
 	
@@ -608,3 +612,11 @@ return {
 
 
 
+
+const notification = function(a){
+    let nb = jQuery("#notification div").length;
+    jQuery("#notification").append("<div id='notif"+(nb+1)+"'>"+a+"</div>");
+    setTimeout(function(){ 
+        jQuery("notif"+(nb+1)).remove();
+     }, 3000);
+}
