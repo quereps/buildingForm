@@ -1,5 +1,8 @@
 const searchModule = (function ($, ksAPI) {
 
+    let search = {};
+
+
     const searchObj = function(){
         this.button = buttonModule.New("page","searchModule.Launch()",["icon","search"]);
         this.form = "<label>Identifier</label><input type='text'></input>";
@@ -71,7 +74,7 @@ const searchModule = (function ($, ksAPI) {
 
 	const init = function(){
         notif("Search Init");
-        let search = new searchObj();
+        search = new searchObj();
         search.button.displayButton();
     }
     
