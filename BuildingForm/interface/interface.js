@@ -57,7 +57,7 @@ const InterfaceModule  = (function ($, ksAPI) {
 	
 	return {
 		init:function(){createInterface()},
-		create:function(){createInterface()},
+		create:function(){createInterface();show()},
 		remove:function(){removeInterface()},
 		show:function(){show()},
 		hide:function(){hide()}
