@@ -257,7 +257,7 @@ var getWorkflow = function(){
 		
 	}
 	console.log("test");
-	InterfaceModule.showResult("#main_frame",sortie);
+	InterfaceModule.showInterface("#main_frame",sortie);
 	
 }
 
@@ -326,7 +326,7 @@ var getFirstQuestionOfPages = function(){
 		
 	}
 
-	InterfaceModule.showResult("#main_frame",firstpageList);
+	InterfaceModule.showInterface("#main_frame",firstpageList);
 
 }
 
@@ -427,7 +427,7 @@ const hideAlwaysModule  = (function ($, ksAPI) {
 		}
 		sortie = "Hide no clear "+temp+" if always";
 
-		InterfaceModule.showResult("#main_frame",sortie);
+		InterfaceModule.showInterface("#main_frame",sortie);
 	};
 	
 	const init = function(){
@@ -468,7 +468,7 @@ const getScoreFormula = function(){ //USE TABLE SOME TIME
 			console.log(label);
 		}
 
-	InterfaceModule.showResult("#main_frame",result);
+	InterfaceModule.showInterface("#main_frame",result);
 	
 }
 	
@@ -532,7 +532,7 @@ const init = function(){
             summaryTableModule.Start();
         });
 	   
-		jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/search/index.js", function() {
+		jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/search/search.js", function() {
 			console.log("searchModule Script loaded but not necessarily executed.");
 			searchModule.Start();
 	 	});
