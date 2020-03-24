@@ -65,6 +65,7 @@ const searchModule = (function ($, ksAPI) {
     const launch = function(){
        notif("launching Search Module");
        console.log("toto");
+       InterfaceModule.show();
     }
 
 

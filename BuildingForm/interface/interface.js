@@ -40,11 +40,21 @@ const InterfaceModule  = (function ($, ksAPI) {
 	
 	const createInterface = function(){
 		console.log("createInterface");
-		jQuery("#main_frame").prepend("<div id='interface'><div class='menu'></div><div class='content'></div><div class='close' onclick='jQuery(this).parent().remove()'></div>");
+		jQuery("#main_frame").prepend("<div id='interface' style='display:none;'><div class='menu'></div><div class='content'></div><div class='close' onclick='jQuery(this).parent().remove()'></div>");
 	} 
+
+	const show = function(){
+		jQuery('#interface').show();
+	}
+
+	const hide = function(){
+		jQuery('#interface').hide();
+	}
 	
 	return {
-		init:function(){createInterface()}
+		init:function(){createInterface()},
+		show:function(){show()},
+		hide:function(){hide()}
 	}
 	
 })(jQuery, ksAPI); 
