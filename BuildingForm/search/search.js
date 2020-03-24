@@ -77,7 +77,7 @@ const searchModule = (function ($, ksAPI) {
         //buttonModule.NewType("search","searchModule.Launch()","search");
         //buttonModule.New("search","page","search");
 
-        //buttonModule.New("page",searchModule.Launch(),["icon","search"]);
+        buttonModule.New("page",searchModule.Launch(),["icon","search"]);
         search.button.displayButton();
     }
     
