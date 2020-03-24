@@ -5,7 +5,7 @@ const searchModule = (function ($, ksAPI) {
 
     const searchObj = function(){
         this.button = buttonModule.New("page","searchModule.Launch()",["icon","search"]);
-        this.form = "<label>Identifier</label><input id='identifierInput' type='text' onkeyup='searchModule.getQIdentifierTextContain(this)'></input>";
+        this.form = "<label>Identifier</label><input id='identifierInput' type='text' onkeyup='searchModule.getQIdentifierTextContain(this.value)'></input>";
 
         return this;
     }
@@ -13,7 +13,6 @@ const searchModule = (function ($, ksAPI) {
 
     
     const getQIdentifierTextContain = function(a){
-        console.log(a.value);
         let result=[];
         for(var i in structure){
             let string = JSON.stringify(structure[i].questionLabel);
@@ -21,11 +20,8 @@ const searchModule = (function ($, ksAPI) {
                 result.push(structure[i]);
             }
         }
-        
-        console.log(a);
         result.sort();
         console.log(result);
-        //InterfaceModule.createInterface("searchResult",result);
     }
 
     const getQIdentifierThatContain = function(a,b){
