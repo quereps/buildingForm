@@ -54,13 +54,18 @@ const InterfaceModule  = (function ($, ksAPI) {
 	const removeInterface = function(){
 		jQuery('#interface').remove();
 	}
+
+	const addcontent = function(a){
+		jQuery('#interface .content').append(a);
+	}
 	
 	return {
 		init:function(){createInterface()},
 		create:function(){createInterface();show()},
 		remove:function(){removeInterface()},
 		show:function(){show()},
-		hide:function(){hide()}
+		hide:function(){hide()},
+		addcontent:function(){addcontent(content)}
 	}
 	
 })(jQuery, ksAPI); 
