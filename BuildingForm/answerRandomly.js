@@ -221,11 +221,10 @@ const answerRandomlyModule = (function ($, ksAPI) {
 			let listOfTextKeys = Object.keys(listOfText);
 			
 			for(let questions in listOfTextKeys){
-				currentList = listOfTextKeys[questions];
+				let currentList = listOfTextKeys[questions];
 				
 				if(vpFindQuestion(currentList)){
 					let idQuestion = vpFindQuestion(currentList).id
-					
 					structure[idQuestion].listOfText = listOfText[listOfTextKeys];
 				}
 				
