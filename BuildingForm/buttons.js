@@ -23,13 +23,13 @@ const buttonModule = (function ($, ksAPI) {
 		this.updateclass = function(){
 			let toreturn = "";
 			for(let item in classlist){
-				toreturn = toreturn + classlist[item];
+				toreturn = toreturn + " " + classlist[item];
 			}
 			this.class = toreturn;
 		}
 
 		this.updateHTML = function(){
-			this.html="<div class='"+this.class+" onclick='"+this.click+"'></div>";
+			this.html="<div class='"+this.class+"' onclick='"+this.click+"'></div>";
 		}
 		
 		this.displayButton = function(){
