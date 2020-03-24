@@ -46,6 +46,8 @@ const buttonModule = (function ($, ksAPI) {
 	//}
 	
 	const newButton = function(target,click,classlist){
+
+		console.log("will creae button "+classlist);
 		return new buttonObj(target,click,classlist);
 		//buttons[id].displayButton();
 	}
@@ -54,7 +56,7 @@ const buttonModule = (function ($, ksAPI) {
 	return{
 		//Start: function(settings){init(settings);},
 		//NewType: function(id,click,icon){newType(id,click,icon)},
-		New: function(target,click,classlist){newButton(target,click,classlist)},
+		New: function(target,click,classlist){return newButton(target,click,classlist)},
 		//Show: function(idbutton){show(idbutton)}
 	}
 })(jQuery, ksAPI);
