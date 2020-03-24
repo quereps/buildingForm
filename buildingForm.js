@@ -235,7 +235,7 @@ const tableObj = function(name){
 	
 	this.apply = function(){
 		this.createRows();
-		showResultModule.Interface("#main_frame","<div id='tableOutput'>"+this.getHTML()+"</div><div id='tableOutputText'></div>");
+		InterfaceModule.Interface("#main_frame","<div id='tableOutput'>"+this.getHTML()+"</div><div id='tableOutputText'></div>");
 		jQuery("#tableOutputText").text(this.gettxtHTML());
 		this.addOptions();
 	}
@@ -257,7 +257,7 @@ var getWorkflow = function(){
 		
 	}
 	console.log("test");
-	showResultModule.showResult("#main_frame",sortie);
+	InterfaceModule.showResult("#main_frame",sortie);
 	
 }
 
@@ -326,7 +326,7 @@ var getFirstQuestionOfPages = function(){
 		
 	}
 
-	showResultModule.showResult("#main_frame",firstpageList);
+	InterfaceModule.showResult("#main_frame",firstpageList);
 
 }
 
@@ -427,7 +427,7 @@ const hideAlwaysModule  = (function ($, ksAPI) {
 		}
 		sortie = "Hide no clear "+temp+" if always";
 
-		showResultModule.showResult("#main_frame",sortie);
+		InterfaceModule.showResult("#main_frame",sortie);
 	};
 	
 	const init = function(){
@@ -468,7 +468,7 @@ const getScoreFormula = function(){ //USE TABLE SOME TIME
 			console.log(label);
 		}
 
-	showResultModule.showResult("#main_frame",result);
+	InterfaceModule.showResult("#main_frame",result);
 	
 }
 	
@@ -511,7 +511,7 @@ const init = function(){
 	jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/interface.js", function() {
         console.log("showResult.js Script loaded but not necessarily executed.");
 	   
-	   showResultModule.Start();
+	   InterfaceModule.Start();
 	});
 	
 	jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/buttons.js", function() {
