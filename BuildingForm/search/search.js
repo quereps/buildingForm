@@ -5,7 +5,7 @@ const searchModule = (function ($, ksAPI) {
 
     const searchObj = function(){
         this.button = buttonModule.New("page","searchModule.Launch()",["icon","search"]);
-        this.form = "<label>Identifier</label><input type='text' onkeyup='searchModule:getQIdentifierTextContain(this)'></input>";
+        this.form = "<label>Identifier</label><input type='text' onkeyup='searchModule.getQIdentifierTextContain(this)'></input>";
 
         return this;
     }
