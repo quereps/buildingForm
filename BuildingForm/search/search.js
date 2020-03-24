@@ -23,7 +23,7 @@ const searchModule = (function ($, ksAPI) {
         }
         result.sort();
         console.log(result);
-        jQuery("#searchResult").append(result);
+        SearchResultModule.createResult("searchResult",result);
     }
 
     const getQIdentifierThatContain = function(a,b){
