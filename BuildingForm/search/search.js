@@ -5,7 +5,7 @@ const searchModule = (function ($, ksAPI) {
 
     const searchObj = function(){
         this.button = buttonModule.New("page","searchModule.Launch()",["icon","search"]);
-        this.form = "<label>Identifier</label><input type='text'></input>";
+        this.form = "<label>Identifier</label><input type='text' onkeyup='searchModule:getQIdentifierTextContain(this)'></input>";
 
         return this;
     }
@@ -80,7 +80,8 @@ const searchModule = (function ($, ksAPI) {
     
 	return{
         Start:function(){init()},
-        Launch:function(){launch()}
+        Launch:function(){launch()},
+        getQIdentifierTextContain:function(a){getQIdentifierTextContain(a)},
 	}
 	
 })(jQuery, ksAPI);
