@@ -46,17 +46,19 @@ const searchResultModule  = (function ($, ksAPI) {
         this.addMenu(this.buttons);
         
         this.show = function(settings){
-            jQuery(this.id).html(this.getAData(settings));
+            jQuery("#"+this.id).html(this.getAData(settings));
         }
 		
 		return this;
 	}
 	
 	const refresh = function(settings){
+		console.log("let's refresh");
         result.show(settings);  
 	}
 	
 	const init = function(){
+
 		console.log("init searchResult");
 	} 
 
