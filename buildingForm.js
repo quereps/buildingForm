@@ -508,7 +508,7 @@ const init = function(){
          href: "https://quereps.github.io/buildingForm/BuildingForm/interface/icons.css"
       });*/
 	
-	jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/interface.js", function() {
+	jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/interface/interface.js", function() {
         console.log("showResult.js Script loaded but not necessarily executed.");
 	   
 	   InterfaceModule.Start();

@@ -1,4 +1,13 @@
 const searchModule = (function ($, ksAPI) {
+
+   
+
+    const searchObj = function(){
+
+        this.button = buttonModule.New("page",searchModule.Launch(),["icon","search"]);
+
+        return this;
+    }
     
     const getQIdentifierTextContain = function(a){
         let result=[];
@@ -62,9 +71,13 @@ const searchModule = (function ($, ksAPI) {
 	const init = function(){
 
         notif("Search Init");
+        let search = new searchObj();
 
-        buttonModule.NewType("search","searchModule.Launch()","search");
-        buttonModule.New("search","page","search");
+        //buttonModule.NewType("search","searchModule.Launch()","search");
+        //buttonModule.New("search","page","search");
+
+        //buttonModule.New("page",searchModule.Launch(),["icon","search"]);
+        search.button.displayButton();
     }
     
 	return{

@@ -1,43 +1,38 @@
 const buttonModule = (function ($, ksAPI) {
 	
-	let buttonsTypes = {};
-	let buttons = {};
+	//let buttonsTypes = {};
+	//let buttons = {};
 	
 	
-	const buttonTypeObj = function(click,icon){
+	//const buttonTypeObj = function(click,icon){
+	//	
+	//	this.click = click;
+	//	this.icon = icon;
+	//	
+	//return this;
+	//}
+	
+	
+	const buttonObj = function(target,click,classlist){
 		
+		this.target = target;
 		this.click = click;
-		this.icon = icon;
-		
-		return this;
-	}
-	
-	
-	const buttonObj = function(qid,type){
-		
-		console.log(buttonsTypes);
-		console.log(type);
-		console.log(buttonsTypes[type]);
-		
-		this.qid = qid;
-		this.type=buttonsTypes[type];
+		this.class=class;
 		this.html="";
 		
-		console.log(this.type);
-		
 		this.updateHTML = function(){
-			this.html="<div class='"+this.type.icon+" icon' onclick='"+this.type.click+"'></div>";
-			return this.html;
+			this.html="<div class='"+this.class+" onclick='"+this.click+"'></div>";
+			//return this.html;
 		}
 		
 		this.displayButton = function(){
 			this.updateHTML();
 			
-			if(qid=="page"){
+			if(target=="page"){
 				jQuery("#buildtoolsMain").append(this.html);
 			}
 			else{
-				jQuery("#questionDivEntireId"+qid).find(".buildtools").append(this.html);
+				jQuery("#questionDivEntireId"+target).find(".buildtools").append(this.html);
 			}
 		}
 		
@@ -45,21 +40,21 @@ const buttonModule = (function ($, ksAPI) {
 	}
 	
 	
-	const newType = function(id,click,icon){
-		buttonsTypes[id]=new buttonTypeObj(click,icon);
-	}
+	//const newType = function(id,click,icon){
+	//	buttonsTypes[id]=new buttonTypeObj(click,icon);
+	//}
 	
-	const newButton = function(id, qid,type){
-		buttons[id] = new buttonObj(qid,type);
-		buttons[id].displayButton();
+	const newButton = function(target,click,classlist){
+		return new buttonObj(qid,type);
+		//buttons[id].displayButton();
 	}
 	
 	
 	return{
 		//Start: function(settings){init(settings);},
-		NewType: function(id,click,icon){newType(id,click,icon)},
-		New: function(id,qid,type){newButton(id,qid,type)},
-		Show: function(idbutton){show(idbutton)}
+		//NewType: function(id,click,icon){newType(id,click,icon)},
+		New: function(target,click,classlist){newButton(target,click,classlist)},
+		//Show: function(idbutton){show(idbutton)}
 	}
 })(jQuery, ksAPI);
 
