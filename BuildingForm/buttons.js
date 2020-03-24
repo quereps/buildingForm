@@ -36,6 +36,7 @@ const buttonModule = (function ($, ksAPI) {
 			}
 		}
 		
+		console.log("button :   ",this);
 		return this;
 	}
 	
