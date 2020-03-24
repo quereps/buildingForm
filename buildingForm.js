@@ -511,7 +511,7 @@ const init = function(){
 	jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/interface/interface.js", function() {
         console.log("showResult.js Script loaded but not necessarily executed.");
 	   
-	   InterfaceModule.Start();
+	   InterfaceModule.init();
 	});
 	
 	jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/buttons.js", function() {
