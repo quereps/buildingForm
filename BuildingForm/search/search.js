@@ -22,6 +22,7 @@ const searchModule = (function ($, ksAPI) {
             }
         }
         result.sort();
+        console.log(result);
         jQuery("#searchResult").append(result);
     }
 
