@@ -35,9 +35,9 @@ const searchResultModule  = (function ($, ksAPI) {
 		
 		//jQuery("#showResult").remove();
 		
-        this.labelBtn = "<button class='htmlButton' onClick='SearchResultModule.Refresh(\"questionLabel\")'>Labels</button>";
-        this.bestRefBtn = "<button class='htmlButton' onClick='SearchResultModule.Refresh(\"bestRef\")'>Ref</button>";
-        this.pipingBtn = "<button class='htmlButton' onClick='SearchResultModule.Refresh(\"piping\")'>Piping</button>";
+        this.labelBtn = "<button class='htmlButton' onClick='searchResultModule.Refresh(\"questionLabel\")'>Labels</button>";
+        this.bestRefBtn = "<button class='htmlButton' onClick='searchResultModule.Refresh(\"bestRef\")'>Ref</button>";
+        this.pipingBtn = "<button class='htmlButton' onClick='searchResultModule.Refresh(\"piping\")'>Piping</button>";
 		
 		this.buttons = [this.labelBtn,this.bestRefBtn,this.pipingBtn];
 		
