@@ -1,7 +1,7 @@
 
 const InterfaceModule  = (function ($, ksAPI) {
 
-	const createInterface = function(){
+	/*const createInterface = function(){
 
 		this.addMenu = function(buttons){
 			console.log("addMenu", buttons);
@@ -31,7 +31,7 @@ const InterfaceModule  = (function ($, ksAPI) {
         }
 		
 		return this;
-	}
+	}*/
 	
 	const refresh = function(id, settings){
         let toShow = interfaces[id].show(settings);
