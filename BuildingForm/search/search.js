@@ -21,8 +21,10 @@ const searchModule = (function ($, ksAPI) {
             }
         }
         
+        console.log(a);
         result.sort();
-        InterfaceModule.createInterface("searchResult",result);
+        console.log(result);
+        //InterfaceModule.createInterface("searchResult",result);
     }
 
     const getQIdentifierThatContain = function(a,b){
