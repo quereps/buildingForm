@@ -77,7 +77,9 @@ const answerRandomlyModule = (function ($, ksAPI) {
 	
 	const answerFillWithText = function (question){
 
-		notif("Answering "+question.bestRef);
+		notif("Answering "+question.bestRef+" - "+question.ref);
+
+		console.log(question);
 
 		let id = question.id;
 		let Qref = question.ref;
