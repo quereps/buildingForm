@@ -32,13 +32,16 @@ const createDMTable = (function ($, ksAPI) {
 
 	const init = function(){
 		   
-			buttonModule.NewType("addHTMLTable","buildingFormsModule.CreateDMTableRun(this)","addHTMLTable");
-			
+			//buttonModule.NewType("addHTMLTable","buildingFormsModule.CreateDMTableRun(this)","addHTMLTable");
+			let buttons = {};
+
 			var onscreen = jQuery(".aDivtypeSingleline, .aDivtypeDropdownList");
 			for(var i=0;i<onscreen.length;i++){
 			let theID = onscreen[i].id.split("questionDivEntireId")[1];			
 				console.log(theID);
-				buttonModule.New(theID,theID,"addHTMLTable");
+				//buttonModule.New(theID,theID,"addHTMLTable");
+				buttons[theID] = buttonModule.New(theID,"buildingFormsModule.CreateDMTableRun(this)",["icon","addHTMLTable"]);
+				buttons[theID].displayButton();
 			}
 
 	}
