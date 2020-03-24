@@ -22,6 +22,7 @@ const buttonModule = (function ($, ksAPI) {
 			for(let item in classlist){
 				toreturn = toreturn + classlist[item];
 			}
+			return toreturn;
 		}
 		this.html="";
 		
