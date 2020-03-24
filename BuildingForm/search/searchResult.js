@@ -1,4 +1,4 @@
-const SearchResultModule  = (function ($, ksAPI) {
+const searchResultModule  = (function ($, ksAPI) {
 	
 	var showResult = function(a,b){
 		jQuery(".showResult").remove();
