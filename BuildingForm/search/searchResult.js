@@ -23,7 +23,7 @@ const SearchResultModule  = (function ($, ksAPI) {
         }
         
 		this.addMenu = function(buttons){
-			console.log("addMenu", buttons);
+			console.log("addMenu2", buttons);
 			let buttonsToAdd = "";
 			
 			for(but in buttons){
@@ -35,9 +35,9 @@ const SearchResultModule  = (function ($, ksAPI) {
 		
 		//jQuery("#showResult").remove();
 		
-        this.labelBtn = "<button class='htmlButton' onClick='showResultModule.Refresh(\"questionLabel\")'>Labels</button>";
-        this.bestRefBtn = "<button class='htmlButton' onClick='showResultModule.Refresh(\"bestRef\")'>Ref</button>";
-        this.pipingBtn = "<button class='htmlButton' onClick='showResultModule.Refresh(\"piping\")'>Piping</button>";
+        this.labelBtn = "<button class='htmlButton' onClick='SearchResultModule.Refresh(\"questionLabel\")'>Labels</button>";
+        this.bestRefBtn = "<button class='htmlButton' onClick='SearchResultModule.Refresh(\"bestRef\")'>Ref</button>";
+        this.pipingBtn = "<button class='htmlButton' onClick='SearchResultModule.Refresh(\"piping\")'>Piping</button>";
 		
 		this.buttons = [this.labelBtn,this.bestRefBtn,this.pipingBtn];
 		

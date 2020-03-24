@@ -541,7 +541,7 @@ const init = function(){
 
 			jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/search/searchResult.js", function() {
 				console.log("searchResult Script loaded but not necessarily executed.");
-				searchResult.Start();
+				searchResultModule.Start();
 			});
 	 	});
 	 
