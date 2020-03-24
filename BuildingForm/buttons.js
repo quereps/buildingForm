@@ -45,7 +45,7 @@ const buttonModule = (function ($, ksAPI) {
 	//}
 	
 	const newButton = function(target,click,classlist){
-		return new buttonObj(qid,type);
+		return new buttonObj(target,click,classlist);
 		//buttons[id].displayButton();
 	}
 	
