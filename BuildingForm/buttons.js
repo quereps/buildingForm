@@ -17,7 +17,12 @@ const buttonModule = (function ($, ksAPI) {
 		
 		this.target = target;
 		this.click = click;
-		this.class=classlist;
+		this.class= function(){
+			let toreturn = "";
+			for(let item in classlist){
+				toreturn = toreturn + classlist[item];
+			}
+		}
 		this.html="";
 		
 		this.updateHTML = function(){
