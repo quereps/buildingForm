@@ -17,7 +17,7 @@ const buttonModule = (function ($, ksAPI) {
 		
 		this.target = target;
 		this.click = click;
-		this.class=class;
+		this.class=classlist;
 		this.html="";
 		
 		this.updateHTML = function(){
