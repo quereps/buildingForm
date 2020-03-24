@@ -40,7 +40,7 @@ const InterfaceModule  = (function ($, ksAPI) {
 	
 	const createInterface = function(){
 		console.log("createInterface");
-		jQuery("#main_frame").prepend("<div id='interface' style=\"display:none;\"><div class='menu'></div><div class='content'></div><div class='close' onclick='InterfaceModule.hide()'></div>");
+		jQuery("#main_frame").prepend("<div id='interface' class='hide'><div class='menu'></div><div class='content'></div><div class='close' onclick='InterfaceModule.hide()'></div>");
 	} 
 
 	const show = function(){
