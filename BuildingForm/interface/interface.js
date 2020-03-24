@@ -44,11 +44,11 @@ const InterfaceModule  = (function ($, ksAPI) {
 	} 
 
 	const show = function(){
-		jQuery('#interface').show();
+		jQuery('#interface').removeClass("hide");
 	}
 
 	const hide = function(){
-		jQuery('#interface').hide();
+		jQuery('#interface').addClass("hide");
 	}
 	
 	return {
