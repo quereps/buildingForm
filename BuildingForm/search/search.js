@@ -13,7 +13,7 @@ const searchModule = (function ($, ksAPI) {
 
     
     const getQIdentifierTextContain = function(a){
-        console.log(a);
+        console.log(a.value);
         let result=[];
         for(var i in structure){
             let string = JSON.stringify(structure[i].questionLabel);
