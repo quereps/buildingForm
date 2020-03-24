@@ -17,21 +17,23 @@ const buttonModule = (function ($, ksAPI) {
 		
 		this.target = target;
 		this.click = click;
-		this.class= function(){
+		this.class= "";
+		this.html="";
+
+		this.updateclass = function(){
 			let toreturn = "";
 			for(let item in classlist){
 				toreturn = toreturn + classlist[item];
 			}
-			return toreturn;
+			this.class = toreturn;
 		}
-		this.html="";
-		
+
 		this.updateHTML = function(){
 			this.html="<div class='"+this.class+" onclick='"+this.click+"'></div>";
-			//return this.html;
 		}
 		
 		this.displayButton = function(){
+			this.updateclass();
 			this.updateHTML();
 			
 			if(target=="page"){
