@@ -29,11 +29,11 @@ const SearchResultModule  = (function ($, ksAPI) {
 			for(but in buttons){
 				buttonsToAdd = buttonsToAdd + buttons[but];
 			}
-            jQuery("#showResultMenu").remove();
-			jQuery("#showResult").prepend("<div id='showResultMenu'>"+buttonsToAdd+"</div>");
+            jQuery("#"+this.id+"Menu").remove();
+			jQuery("#"+this.id).prepend("<div id="+this.id+"Menu'>"+buttonsToAdd+"</div>");
 		}
 		
-		jQuery("#showResult").remove();
+		//jQuery("#showResult").remove();
 		
         this.labelBtn = "<button class='htmlButton' onClick='showResultModule.Refresh(\"questionLabel\")'>Labels</button>";
         this.bestRefBtn = "<button class='htmlButton' onClick='showResultModule.Refresh(\"bestRef\")'>Ref</button>";
