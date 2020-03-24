@@ -44,7 +44,7 @@ const InterfaceModule  = (function ($, ksAPI) {
 	} 
 	
 	return {
-		init:function(){createInterface()};
+		init:function(){createInterface()}
 	}
 	
 })(jQuery, ksAPI); 
