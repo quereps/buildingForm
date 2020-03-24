@@ -1,28 +1,8 @@
 
 const InterfaceModule  = (function ($, ksAPI) {
-	
-	//var showResult = function(a,b){
-		//jQuery(".showResult").remove();
-		//jQuery(a).prepend("<div class='showResult'><div class='result'>"+b+"</div><div class='close' onclick='jQuery(this).parent().remove()'>Close</div>");
-	//}
-	
-	//let interfaces = {};
-	
+
 	const createInterface = function(){
 
-		//this.id = id;
-        //this.questionList = questionArray;
-        
-		/*this.getAData = function(prop){ // return a specific prop of the question object (label, identifier, Qref)
-			let toReturn = [];
-			
-			for(question in this.questionList){
-				toReturn.push(this.questionList[question][prop]);
-			}
-			
-			return toReturn;
-        }*/
-        
 		this.addMenu = function(buttons){
 			console.log("addMenu", buttons);
 			let buttonsToAdd = "";
@@ -36,13 +16,13 @@ const InterfaceModule  = (function ($, ksAPI) {
 		
 		jQuery("#showResult").remove();
 		
-        this.labelBtn = "<button class='htmlButton' id='"+this.id+"' onClick='showResultModule.Refresh(\""+this.id+"\",\"questionLabel\")'>Labels</button>";
-        this.bestRefBtn = "<button class='htmlButton' id='"+this.id+"' onClick='showResultModule.Refresh(\""+this.id+"\",\"bestRef\")'>Ref</button>";
-        this.pipingBtn = "<button class='htmlButton' id='"+this.id+"' onClick='showResultModule.Refresh(\""+this.id+"\",\"piping\")'>Piping</button>";
+        //this.labelBtn = "<button class='htmlButton' id='"+this.id+"' onClick='showResultModule.Refresh(\""+this.id+"\",\"questionLabel\")'>Labels</button>";
+        //this.bestRefBtn = "<button class='htmlButton' id='"+this.id+"' onClick='showResultModule.Refresh(\""+this.id+"\",\"bestRef\")'>Ref</button>";
+        //this.pipingBtn = "<button class='htmlButton' id='"+this.id+"' onClick='showResultModule.Refresh(\""+this.id+"\",\"piping\")'>Piping</button>";
 		
-		this.buttons = [this.labelBtn,this.bestRefBtn,this.pipingBtn];
+		//this.buttons = [this.labelBtn,this.bestRefBtn,this.pipingBtn];
 		
-		jQuery("#main_frame").prepend("<div id='showResult'><div class='result'></div><div class='close' onclick='jQuery(this).parent().remove()'></div>");
+		
 		
         this.addMenu(this.buttons);
         
@@ -58,15 +38,13 @@ const InterfaceModule  = (function ($, ksAPI) {
         jQuery(".result").html(toShow);
 	}
 	
-	const init = function(){
-		console.log("init showResultModule");
+	const createInterface = function(){
+		console.log("createInterface");
+		jQuery("#main_frame").prepend("<div id='interface'><div class='menu'></div><div class='content'></div><div class='close' onclick='jQuery(this).parent().remove()'></div>");
 	} 
 	
 	return {
-		Start:function(){init()},
-		showInterface:function(a,b){showInterface(interfaceId)},
-		createInterface:function(id,a){interfaces[id] = new createInterface(id,a)},
-		Refresh:function(id,settings){refresh(id,settings)}
+		init:function(){createInterface()};
 	}
 	
 })(jQuery, ksAPI); 
