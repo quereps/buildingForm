@@ -16,6 +16,8 @@ const searchResultModule  = (function ($, ksAPI) {
 		}
 
 		toReturn = toReturn + "</table>";
+
+		return toReturn;
 	}
 
 
