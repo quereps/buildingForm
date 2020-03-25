@@ -55,7 +55,7 @@ const searchResultModule  = (function ($, ksAPI) {
 		
 		this.buttons = [this.labelBtn,this.bestRefBtn,this.pipingBtn];
 
-		if(!jQuery("#"+this.id).length==0){
+		if(jQuery("#"+this.id).length==0){
 			this.addMenu(this.buttons);
 		}
         
