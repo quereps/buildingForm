@@ -14,7 +14,8 @@ const getStructure = function(){
 			this.listOfText = getSWApi("people","",20,"");
 			this.identifier = vpGetIdentifierByReference(this.ref);
             this.nbOfAnswers = Object.keys(vpGetStructure().questionsMap[this.id].answers).length;
-            
+			this.onPage = false;
+			
 			this.getBestRef = function(){
 				let toreturn = this.ref;
 				this.identifier ? toreturn = this.identifier : toreturn = this.ref;	
@@ -36,7 +37,7 @@ const getStructure = function(){
 		}
 	
 	
-	const getQuestions = function(){
+	const getQuestionsOld = function(){
 		for(var q in questionOnPage){
 			
 			if(vpGetQuestionByQuestionId(questionOnPage[q])){
@@ -44,6 +45,22 @@ const getStructure = function(){
 				let theid = questionOnPage[q];
 				questionObjs[theid] = new questionObjsClass(questionOnPage[q]);
 			}
+		}
+		
+		
+	}
+
+	const getQuestions = function(){
+
+		let listOfQuestions = Object.keys(vpGetStructure().questionsMap);
+
+		for(var q in listOfQuestions){
+			
+			//if(vpGetQuestionByQuestionId(listOfQuestions[q])){
+				
+				let theid = listOfQuestions[q];
+				questionObjs[theid] = new questionObjsClass(questionOnPage[q]);
+			//}
 		}
 		
 		
