@@ -3,6 +3,10 @@ jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/randexp.js
 });
 
 
+const getRefbyId = function(a){
+	return (_.invert(jsApiConverter))["Q"+a];
+}
+
 // Create new link Element 
 ////var link = document.createElement('link');  
   
@@ -299,9 +303,7 @@ var questionTypeRef = {
 
 
 
-var getRefbyId = function(a){
-	return (_.invert(jsApiConverter))["Q"+a];
-}
+
 
 
 var getFirstQuestionOfPages = function(){
