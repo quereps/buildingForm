@@ -1,4 +1,25 @@
 const InterfaceModule  = (function ($, ksAPI) {
+
+	let options = {};
+
+	const optionObj = function(id, content){
+		
+		this.id = id;
+		this.content = content;
+
+		this.init = function(){
+			jQuery('#interface .options').append("<div id='"+this.id+"'>"+this.content+"</div>");
+		}
+
+		this.refresh = function(){
+			jQuery('#'+this.id).html(this.content);
+		}
+		return this;
+	}
+
+
+
+
 	const refresh = function(id, settings){
         let toShow = interfaces[id].show(settings);
         jQuery(".result").html(toShow);
@@ -21,12 +42,13 @@ const InterfaceModule  = (function ($, ksAPI) {
 		jQuery('#interface').remove();
 	}
 
-	const addcontent = function(a){
-		jQuery('#interface .content').append("<div>"+a+"</div>");
-	}
+	//const addcontent = function(a){
+	//	jQuery('#interface .content').append("<div>"+a+"</div>");
+	//}
 
-	const addoptions = function(a){
-		jQuery('#interface .options').append(a);
+	const addoptions = function(id, content){
+		options[id] = new optionObj(id, content);
+		options[id].init();
 	}
 	
 	return {
