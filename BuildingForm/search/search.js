@@ -89,7 +89,7 @@ const searchModule = (function ($, ksAPI) {
     }
 
     const createSearchTool = function(settings){
-        let searchTool = new searchTool(settings);
+        let thesearchTool = new searchTool(settings);
         searchTool.show();
     }
     
