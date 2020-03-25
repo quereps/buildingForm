@@ -10,7 +10,7 @@ const getStructure = function(){
 			
 			this.id = id;
 			this.ref = vpGetQuestionByQuestionId(this.id).prefix;
-			this.questionLabel = jQuery(vpGetLabel(this.ref)).html().split('</span>')[1];
+			this.questionLabel = jQuery(vpGetLabel(this.ref)).html();
 			this.listOfText = getSWApi("people","",20,"");
 			this.identifier = vpGetIdentifierByReference(this.ref);
             this.nbOfAnswers = Object.keys(vpGetStructure().questionsMap[this.id].answers).length;

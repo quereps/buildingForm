@@ -23,7 +23,7 @@ const searchResultModule  = (function ($, ksAPI) {
         }
         
 		this.addMenu = function(buttons){
-			console.log("addMenu2", buttons);
+			//console.log("addMenu2", buttons);
 			let buttonsToAdd = "";
 			
 			for(but in buttons){
