@@ -11,8 +11,6 @@ const searchModule = (function ($, ksAPI) {
         return this;
     }
 
-
-    
     const getQIdentifierTextContain = function(a){
 
         console.log(a);

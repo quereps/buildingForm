@@ -22,7 +22,7 @@ const InterfaceModule  = (function ($, ksAPI) {
 	}
 
 	const addcontent = function(a){
-		jQuery('#interface .content').append(a);
+		jQuery('#interface .content').append("<div>"+a+"</div>");
 	}
 
 	const addoptions = function(a){

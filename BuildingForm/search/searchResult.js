@@ -42,7 +42,7 @@ const searchResultModule  = (function ($, ksAPI) {
 				buttonsToAdd = buttonsToAdd + buttons[but];
 			}
             jQuery("#"+this.id+" .options .Menu").remove();
-			jQuery("#"+this.id+" .options").prepend("<div class='Menu'>"+buttonsToAdd+"</div>");
+			jQuery("#"+this.id+" .options").append("<div class='Menu'>"+buttonsToAdd+"</div>");
 		}
 
         this.labelBtn = "<button class='searchButton' onClick='searchResultModule.Refresh(\"questionLabel\")'>Labels</button>";
