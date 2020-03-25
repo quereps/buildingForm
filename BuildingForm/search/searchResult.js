@@ -46,7 +46,7 @@ const searchResultModule  = (function ($, ksAPI) {
         this.addMenu(this.buttons);
         
         this.show = function(settings){
-            jQuery("#"+this.id).html(this.getAData(settings));
+            jQuery("#"+this.id+" .content").html(this.getAData(settings));
         }
 		
 		return this;
