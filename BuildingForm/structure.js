@@ -2,7 +2,7 @@
 const getStructure = function(){
 	
 	const pageNumber = vpGetStructure().questionsMap[(jQuery(".aDivEntireQuestion ").first()[0].id.split("Id")[1])].pageNum;
-	const questionOnPage = vpGetStructure().questionsByVP[pageNumber];
+	//const questionOnPage = vpGetStructure().questionsByVP[pageNumber];
 
 	let questionObjs = {};
 
@@ -15,8 +15,8 @@ const getStructure = function(){
 			this.listOfText = getSWApi("people","",20,"");
 			this.identifier = vpGetIdentifierByReference(this.ref);
             this.nbOfAnswers = Object.keys(vpGetStructure().questionsMap[this.id].answers).length;
-			this.onPage = false;
-			
+			this.onPage = function(){this.pgeNum == pageNumber ? true : false};
+
 			this.getBestRef = function(){
 				let toreturn = this.ref;
 				this.identifier ? toreturn = this.identifier : toreturn = this.ref;	
