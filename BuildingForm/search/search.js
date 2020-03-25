@@ -26,7 +26,7 @@ const searchModule = (function ($, ksAPI) {
         }
         result.sort();
         console.log(result);
-        searchResultModule.createResult("searchResult",result);
+        searchResultModule.createResult("interface",result);
     }
 
     const getQIdentifierThatContain = function(a,b){
