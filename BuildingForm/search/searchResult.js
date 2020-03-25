@@ -55,7 +55,10 @@ const searchResultModule  = (function ($, ksAPI) {
 		
 		this.buttons = [this.labelBtn,this.bestRefBtn,this.pipingBtn];
 
-        this.addMenu(this.buttons);
+		if(!jQuery("#"+this.id)){
+			this.addMenu(this.buttons);
+		}
+        
         
         this.show = function(settings){
             jQuery("#"+this.id+" .content").html(this.getAData(settings));
