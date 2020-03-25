@@ -1,38 +1,4 @@
-
 const InterfaceModule  = (function ($, ksAPI) {
-
-	/*const createInterface = function(){
-
-		this.addMenu = function(buttons){
-			console.log("addMenu", buttons);
-			let buttonsToAdd = "";
-			
-			for(but in buttons){
-				buttonsToAdd = buttonsToAdd + buttons[but];
-			}
-            jQuery("#showResultMenu").remove();
-			jQuery("#showResult").prepend("<div id='showResultMenu'>"+buttonsToAdd+"</div>");
-		}
-		
-		jQuery("#showResult").remove();
-		
-        //this.labelBtn = "<button class='htmlButton' id='"+this.id+"' onClick='showResultModule.Refresh(\""+this.id+"\",\"questionLabel\")'>Labels</button>";
-        //this.bestRefBtn = "<button class='htmlButton' id='"+this.id+"' onClick='showResultModule.Refresh(\""+this.id+"\",\"bestRef\")'>Ref</button>";
-        //this.pipingBtn = "<button class='htmlButton' id='"+this.id+"' onClick='showResultModule.Refresh(\""+this.id+"\",\"piping\")'>Piping</button>";
-		
-		//this.buttons = [this.labelBtn,this.bestRefBtn,this.pipingBtn];
-		
-		
-		
-        this.addMenu(this.buttons);
-        
-        this.show = function(settings){
-            return this.getAData(settings);
-        }
-		
-		return this;
-	}*/
-	
 	const refresh = function(id, settings){
         let toShow = interfaces[id].show(settings);
         jQuery(".result").html(toShow);
@@ -58,6 +24,10 @@ const InterfaceModule  = (function ($, ksAPI) {
 	const addcontent = function(a){
 		jQuery('#interface .content').append(a);
 	}
+
+	const addoptions = function(a){
+		jQuery('#interface .options').append(a);
+	}
 	
 	return {
 		init:function(){createInterface()},
@@ -65,7 +35,8 @@ const InterfaceModule  = (function ($, ksAPI) {
 		remove:function(){removeInterface()},
 		show:function(){show()},
 		hide:function(){hide()},
-		addcontent:function(content){addcontent(content)}
+		addcontent:function(content){addcontent(content)},
+		addoptions:function(content){addoptions(content)}
 	}
 	
 })(jQuery, ksAPI); 

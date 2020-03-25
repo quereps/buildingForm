@@ -36,7 +36,6 @@ const searchResultModule  = (function ($, ksAPI) {
         }
         
 		this.addMenu = function(buttons){
-			//console.log("addMenu2", buttons);
 			let buttonsToAdd = "";
 			
 			for(but in buttons){
@@ -45,17 +44,13 @@ const searchResultModule  = (function ($, ksAPI) {
             jQuery("#"+this.id+" .options .Menu").remove();
 			jQuery("#"+this.id+" .options").prepend("<div class='Menu'>"+buttonsToAdd+"</div>");
 		}
-		
-		//jQuery("#showResult").remove();
-		
+
         this.labelBtn = "<button class='searchButton' onClick='searchResultModule.Refresh(\"questionLabel\")'>Labels</button>";
         this.bestRefBtn = "<button class='searchButton' onClick='searchResultModule.Refresh(\"bestRef\")'>Ref</button>";
         this.pipingBtn = "<button class='searchButton' onClick='searchResultModule.Refresh(\"piping\")'>Piping</button>";
 		
 		this.buttons = [this.labelBtn,this.bestRefBtn,this.pipingBtn];
-		
-		//jQuery("#main_frame").prepend("<div id='showResult'><div class='result'></div><div class='close' onclick='jQuery(this).parent().remove()'></div>");
-		
+
         this.addMenu(this.buttons);
         
         this.show = function(settings){
@@ -82,8 +77,6 @@ const searchResultModule  = (function ($, ksAPI) {
 	return {
 		Start:function(){init()},
 		createResult:function(idTarget, questionArray){createResult(idTarget, questionArray)},
-		//showInterface:function(a,b){showInterface(interfaceId)},
-		//createInterface:function(id,a){interfaces[id] = new createInterface(id,a)},
 		Refresh:function(settings){refresh(settings)}
 	}
 	
