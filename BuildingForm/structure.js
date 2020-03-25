@@ -60,7 +60,7 @@ const getStructure = function(){
 			//if(vpGetQuestionByQuestionId(listOfQuestions[q])){
 				
 				let theid = listOfQuestions[q];
-				questionObjs[theid] = new questionObjsClass(questionOnPage[q]);
+				questionObjs[theid] = new questionObjsClass(theid);
 			//}
 		}
 		
