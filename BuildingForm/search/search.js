@@ -14,7 +14,7 @@ const searchModule = (function ($, ksAPI) {
         
         this.arrayKeys = Object.keys(structure);
 
-        this.show = searchResultModule.createResult("interface",result);
+        this.show = searchResultModule.createResult("interface",this.arrayKeys);
 
         return this;
     }
