@@ -43,7 +43,7 @@ const searchResultModule  = (function ($, ksAPI) {
 				buttonsToAdd = buttonsToAdd + buttons[but];
 			}
             jQuery("#"+this.id+" .options .Menu").remove();
-			jQuery("#"+this.id+" .options").prepend("<div id='"+this.id+"Menu'>"+buttonsToAdd+"</div>");
+			jQuery("#"+this.id+" .options").prepend("<div class='Menu'>"+buttonsToAdd+"</div>");
 		}
 		
 		//jQuery("#showResult").remove();
