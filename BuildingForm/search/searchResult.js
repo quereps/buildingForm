@@ -1,12 +1,25 @@
 const searchResultModule  = (function ($, ksAPI) {
 	
-	var showResult = function(a,b){
-		jQuery(".showResult").remove();
-		jQuery(a).prepend("<div class='showResult'><div class='result'>"+b+"</div><div class='close' onclick='jQuery(this).parent().remove()'>Close</div>");
-	}
+	//var showResult = function(a,b){
+	//	jQuery(".showResult").remove();
+	//	jQuery(a).prepend("<div class='showResult'><div class='result'>"+b+"</div><div class='close' onclick='jQuery(this).parent().remove()'>Close</div>");
+	//}
 	
 	let result = {};
 	
+	const presentData = function(dataArray){
+		
+		toReturn = "<table>";
+		
+		for(let i in dataArray){
+			let toReturn = toReturn + "<tr><td>"+dataArray[i]+"</td></tr>"
+		}
+
+		toReturn = toReturn + "</table>";
+	}
+
+
+
 	const newResult = function(idTarget, questionArray){
 
 		this.id = idTarget;
@@ -19,7 +32,7 @@ const searchResultModule  = (function ($, ksAPI) {
 				toReturn.push(this.questionList[question][prop]);
 			}
 			
-			return toReturn;
+			return presentData(toReturn);
         }
         
 		this.addMenu = function(buttons){
