@@ -9,8 +9,9 @@ const getStructure = function(){
 	const questionObjsClass = function(id){
 			
 			this.id = id;
-			this.ref = vpGetQuestionByQuestionId(this.id).prefix;
-			this.questionLabel = jQuery(vpGetLabel(this.ref)).html();
+			this.ref = getRefbyId(this.id);//vpGetQuestionByQuestionId(this.id).prefix;
+			this.questionLabel = vpGetStructure().questionsMap[this.id].name;
+			this.pageNum = vpGetStructure().questionsMap[this.id].pageNum;
 			this.listOfText = getSWApi("people","",20,"");
 			this.identifier = vpGetIdentifierByReference(this.ref);
             this.nbOfAnswers = Object.keys(vpGetStructure().questionsMap[this.id].answers).length;
