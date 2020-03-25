@@ -58,7 +58,7 @@ const InterfaceModule  = (function ($, ksAPI) {
 		show:function(){show()},
 		hide:function(){hide()},
 		addcontent:function(content){addcontent(content)},
-		addoptions:function(content){addoptions(content)}
+		addoptions:function(id, content){addoptions(id, content)}
 	}
 	
 })(jQuery, ksAPI); 
