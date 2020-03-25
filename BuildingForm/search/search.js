@@ -10,6 +10,15 @@ const searchModule = (function ($, ksAPI) {
         return this;
     }
 
+    const searchTool = function(){
+        
+        this.arrayKeys = Object.keys(structure);
+
+        this.show = searchResultModule.createResult("interface",result);
+
+        return this;
+    }
+
     const getQIdentifierTextContain = function(a){
 
         console.log(a);
@@ -78,11 +87,17 @@ const searchModule = (function ($, ksAPI) {
         search = new searchObj();
         search.button.displayButton();
     }
+
+    const createSearchTool = function(settings){
+        let searchTool = new searchTool(settings);
+        searchTool.show();
+    }
     
 	return{
         Start:function(){init()},
         Launch:function(){launch()},
-        getQIdentifierTextContain:function(a){getQIdentifierTextContain(a)},
+        //getQIdentifierTextContain:function(a){getQIdentifierTextContain(a)},
+        getQIdentifierTextContain:function(settings){createSearchTool(settings)}
 	}
 	
 })(jQuery, ksAPI);
