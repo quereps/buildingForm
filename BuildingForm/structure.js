@@ -37,19 +37,6 @@ const getStructure = function(){
 			return this;
 		}
 	
-	
-	const getQuestionsOld = function(){
-		for(var q in questionOnPage){
-			
-			if(vpGetQuestionByQuestionId(questionOnPage[q])){
-				
-				let theid = questionOnPage[q];
-				questionObjs[theid] = new questionObjsClass(questionOnPage[q]);
-			}
-		}
-		
-		
-	}
 
 	const getQuestions = function(){
 
