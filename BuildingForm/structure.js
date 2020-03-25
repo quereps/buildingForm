@@ -15,7 +15,7 @@ const getStructure = function(){
 			
 			this.identifier = vpGetIdentifierByReference(this.ref);
             this.nbOfAnswers = Object.keys(vpGetStructure().questionsMap[this.id].answers).length;
-			this.onPage = function(){this.pageNum == pageNumber ? true : false};
+			this.onPage = this.pageNum == pageNumber ? true : false;
 
 			this.listOfText = this.onPage ? getSWApi("people","",20,"") : "";
 
