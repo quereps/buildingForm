@@ -9,7 +9,7 @@ const searchResultModule  = (function ($, ksAPI) {
 	
 	const presentData = function(dataArray){
 		
-		let toReturn = "<table>";
+		let toReturn = "<table style='margin:auto;' class='resultTable'>";
 		
 		for(let i in dataArray){
 			toReturn = toReturn + "<tr><td>"+dataArray[i]+"</td></tr>"
