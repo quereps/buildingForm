@@ -37,8 +37,10 @@ const searchModule = (function ($, ksAPI) {
             let initialList = vpGetStructure().questionsSorted;
 
             for(let id in initialList){
-                let question = structure[initialList[id]]
-                if(question.identifier.indexOf(criteria.identifier)>0){
+                let question = structure[initialList[id]];
+
+                let string = JSON.stringify(question.identifier);
+                if(string.indexOf(criteria.identifier)>0){
                     this.resultArray.push(question.id);
                 }
             }
