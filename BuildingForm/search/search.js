@@ -6,7 +6,7 @@ const searchModule = (function ($, ksAPI) {
     const searchObj = function(){
         this.button = buttonModule.New("page","searchModule.Launch()",["icon","search"]);
         this.form = 
-            "<label>Identifier</label><input id='identifierInput' type='text' onkeyup='searchModule.getQIdentifierTextContain(this.value)'></input>"+
+            "<label>Identifier</label><input id='identifierInput' type='text' onkeyup='searchModule.identifier(this.value)'></input>"+
             "<label>Question Type:</label>"+
             "<select onchange='searchModule.getQIdentifierTextContain()'><option value='CHECKALL_NO_OTHER'>CHECKALL_NO_OTHER</option>"+
             "<option value='HEADER'>HEADER</option>"+
@@ -14,19 +14,32 @@ const searchModule = (function ($, ksAPI) {
             "<option value='PICK_ONE_WITH_OTHER'>PICK_ONE_WITH_OTHER</option>"+
             "<option value='PICK_ONE_NO_OTHER'>PICK_ONE_NO_OTHER</option>"+
             "<option value='SINGLE_LINE'>SINGLE_LINE</option></select>";
-        return this;
-    }
-
-    const searchTool = function(){
         
-        this.arrayKeys = vpGetStructure().questionsSorted;
-
-        this.show = function(){searchResultModule.createResult("interface",this.arrayKeys)};
+        this.resultArray = vpGetStructure().questionsSorted;
+        
+        this.show = function(){searchResultModule.createResult("interface",this.resultArray)};
+        
+        this.filter = function(func,array){
+            this.resultArray = func(array);
+        }
 
         return this;
     }
 
-    const getQIdentifierTextContain = function(a){
+    /*const searchTool = function(){
+        
+        this.resultArray = vpGetStructure().questionsSorted;
+
+        this.filter = function(func,array){
+            this.resultArray = func(array);
+        }
+
+        this.show = function(){searchResultModule.createResult("interface",this.resultArray)};
+
+        return this;
+    }*/
+
+    const identifier = function(a){
 
         console.log(a);
         let result=[];
@@ -39,7 +52,7 @@ const searchModule = (function ($, ksAPI) {
         }
         result.sort();
         console.log(result);
-        searchResultModule.createResult("interface",result);
+        //searchResultModule.createResult("interface",result);
     }
 
     const getQIdentifierThatContain = function(a,b){
@@ -104,7 +117,7 @@ const searchModule = (function ($, ksAPI) {
         Start:function(){init()},
         Launch:function(){launch()},
         //getQIdentifierTextContain:function(a){getQIdentifierTextContain(a)},
-        getQIdentifierTextContain:function(settings){createSearchTool(settings)}
+        //Create:function(settings){createSearchTool(settings)}
 	}
 	
 })(jQuery, ksAPI);
