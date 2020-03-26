@@ -6,7 +6,7 @@ const searchModule = (function ($, ksAPI) {
     const searchObj = function(){
         this.button = buttonModule.New("page","searchModule.Launch()",["icon","search"]);
         this.form = 
-            "<label>Identifier</label><input id='identifierInput' type='text' onkeyup='searchModule.identifier(this.value)'></input>"+
+            "<label>Identifier</label><input id='identifierInput' type='text' onkeyup='searchModule.update()'></input>"+
             "<label>Question Type:</label>"+
             "<select onchange='searchModule.getQIdentifierTextContain()'><option value='CHECKALL_NO_OTHER'>CHECKALL_NO_OTHER</option>"+
             "<option value='HEADER'>HEADER</option>"+
@@ -16,6 +16,10 @@ const searchModule = (function ($, ksAPI) {
             "<option value='SINGLE_LINE'>SINGLE_LINE</option></select>";
         
         this.resultArray = vpGetStructure().questionsSorted;
+
+        this.update = function(){
+            this.show();
+        }
         
         this.show = function(){searchResultModule.createResult("interface",this.resultArray)};
         
@@ -108,14 +112,14 @@ const searchModule = (function ($, ksAPI) {
         search.button.displayButton();
     }
 
-    const createSearchTool = function(settings){
-        let thesearchTool = new searchTool(settings);
-        thesearchTool.show();
+    const update = function(settings){
+        search.update();
     }
     
 	return{
         Start:function(){init()},
         Launch:function(){launch()},
+        update:function(){update()},
         //getQIdentifierTextContain:function(a){getQIdentifierTextContain(a)},
         //Create:function(settings){createSearchTool(settings)}
 	}
