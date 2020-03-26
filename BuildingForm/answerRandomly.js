@@ -173,7 +173,8 @@ const answerRandomlyModule = (function ($, ksAPI) {
 	const goDroid = function(question){
 		
 		console.log(question);
-		
+
+		if(jQuery("#questionDivEntireId"+question.id).is(":visible")){
 			if(toCheckOnce.indexOf(question.type) in toCheckOnce){
 				answerCheckOnce(question);
 			}
@@ -197,7 +198,8 @@ const answerRandomlyModule = (function ($, ksAPI) {
 			else if(toCheckColumns.indexOf(question.type) in toCheckColumns){
 				 answerCheckColumns(question);
 			}
-		}
+		}			
+	}
 	
 	
 	const answerRandomly = function(){
