@@ -6,7 +6,14 @@ const searchModule = (function ($, ksAPI) {
     const searchObj = function(){
         this.button = buttonModule.New("page","searchModule.Launch()",["icon","search"]);
         this.form = 
-            "<label>Identifier</label><input id='identifierInput' type='text' onkeyup='searchModule.getQIdentifierTextContain(this.value)'></input>";
+            "<label>Identifier</label><input id='identifierInput' type='text' onkeyup='searchModule.getQIdentifierTextContain(this.value)'></input>"+
+            "<label>Question Type:</label>"+
+            "<select onchange='searchModule.getQIdentifierTextContain()'><option value='CHECKALL_NO_OTHER'>CHECKALL_NO_OTHER</option>"+
+            "<option value='HEADER'>HEADER</option>"+
+            "<option value='MULTI_LINE'>MULTI_LINE</option>"+
+            "<option value='PICK_ONE_WITH_OTHER'>PICK_ONE_WITH_OTHER</option>"+
+            "<option value='PICK_ONE_NO_OTHER'>PICK_ONE_NO_OTHER</option>"+
+            "<option value='SINGLE_LINE'>SINGLE_LINE</option></select>";
         return this;
     }
 
