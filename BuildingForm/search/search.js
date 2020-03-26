@@ -21,7 +21,7 @@ const searchModule = (function ($, ksAPI) {
 
         this.update = function(){
             this.filter();
-            this.show();
+            
         }
         
         this.show = function(){searchResultModule.createResult("interface",this.resultArray)};
@@ -38,9 +38,12 @@ const searchModule = (function ($, ksAPI) {
 
             for(let id in initialList){
                 let question = structure[initialList[id]]
-                if(question.identifier.indexOf(criteria.identifier) )
+                if(question.identifier.indexOf(criteria.identifier)>0){
+                    this.resultArray.push(question.id);
+                }
             }
-
+            
+            this.show();
         }
 
         return this;
