@@ -22,16 +22,17 @@ const searchResultModule  = (function ($, ksAPI) {
 
 
 
-	const newResult = function(idTarget, questionArray){
+	const newResult = function(idTarget, questionIdArray){
 
 		this.id = idTarget;
-        this.questionList = questionArray;
+        this.questionIdList = questionIdArray;
         
 		this.getAData = function(prop){ // return a specific prop of the question object (label, identifier, Qref)
 			let toReturn = [];
 			
-			for(question in this.questionList){
-				toReturn.push(this.questionList[question][prop]);
+			for(questionId in this.questionIdList){
+				let question = structure[this.questionIdList[questionId]];
+				toReturn.push(question[prop]);
 			}
 			
 			return presentData(toReturn);
