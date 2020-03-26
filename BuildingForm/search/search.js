@@ -20,19 +20,24 @@ const searchModule = (function ($, ksAPI) {
 
 
         this.update = function(){
+            this.updateCriteria();
             this.filter();
-            
         }
         
         this.show = function(){searchResultModule.createResult("interface",this.resultArray)};
         
+        this.criteria = {
+            identifier:"",
+            questiontype:""
+        } 
+
+        this.updateCriteria = function(){
+            this.criteria.identifier = jQuery("#identifierInput").val();
+            this.criteria.questiontype = jQuery("#questiontype").val();
+        }
+
         this.filter = function(){
             this.resultArray = [];
-
-            let criteria = {
-                identifier:jQuery("#identifierInput").val(),
-                questiontype:jQuery("#questiontype").val()
-            } 
 
             let initialList = vpGetStructure().questionsSorted;
 
@@ -40,7 +45,7 @@ const searchModule = (function ($, ksAPI) {
                 let question = structure[initialList[id]];
 
                 let string = JSON.stringify(question.identifier);
-                if(string.indexOf(criteria.identifier)>0){
+                if(string.indexOf(this.criteria.identifier)>0){
                     this.resultArray.push(question.id);
                 }
             }
