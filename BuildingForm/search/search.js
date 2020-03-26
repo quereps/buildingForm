@@ -8,7 +8,7 @@ const searchModule = (function ($, ksAPI) {
         this.form = 
             "<label>Identifier</label><input id='identifierInput' type='text' onkeyup='searchModule.update()'></input>"+
             "<label>Question Type:</label>"+
-            "<select id='questiontype' onchange='searchModule.getQIdentifierTextContain()'><option value='CHECKALL_NO_OTHER'>CHECKALL_NO_OTHER</option>"+
+            "<select id='questiontype' onchange='searchModule.update()'><option value='CHECKALL_NO_OTHER'>CHECKALL_NO_OTHER</option>"+
             "<option value='HEADER'>HEADER</option>"+
             "<option value='MULTI_LINE'>MULTI_LINE</option>"+
             "<option value='PICK_ONE_WITH_OTHER'>PICK_ONE_WITH_OTHER</option>"+
