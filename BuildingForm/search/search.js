@@ -44,10 +44,14 @@ const searchModule = (function ($, ksAPI) {
             for(let id in initialList){
                 let question = structure[initialList[id]];
 
-                let string = JSON.stringify(question.identifier);
-                if(string.indexOf(this.criteria.identifier)>0){
-                    this.resultArray.push(question.id);
+                if(question.identifier){
+                    let string = JSON.stringify(question.identifier);
+                    if(string.indexOf(this.criteria.identifier)>0){
+                        this.resultArray.push(question.id);
+                    }
+
                 }
+                
             }
             
             this.show();
