@@ -76,6 +76,7 @@ const searchResultModule  = (function ($, ksAPI) {
 	const init = function(){
 
 		console.log("init searchResult");
+		result.show("bestRef"); 
 	} 
 
 	const createResult = function(idTarget, questionArray){
