@@ -8,7 +8,7 @@ const searchModule = (function ($, ksAPI) {
         this.form = 
             "<label>Identifier</label><input id='identifierInput' type='text' onkeyup='searchModule.update()'></input>"+
             "<label>Question Type:</label>"+
-            "<select onchange='searchModule.getQIdentifierTextContain()'><option value='CHECKALL_NO_OTHER'>CHECKALL_NO_OTHER</option>"+
+            "<select id='questiontype' onchange='searchModule.getQIdentifierTextContain()'><option value='CHECKALL_NO_OTHER'>CHECKALL_NO_OTHER</option>"+
             "<option value='HEADER'>HEADER</option>"+
             "<option value='MULTI_LINE'>MULTI_LINE</option>"+
             "<option value='PICK_ONE_WITH_OTHER'>PICK_ONE_WITH_OTHER</option>"+
@@ -17,31 +17,28 @@ const searchModule = (function ($, ksAPI) {
         
         this.resultArray = vpGetStructure().questionsSorted;
 
+
+
         this.update = function(){
             this.show();
         }
         
         this.show = function(){searchResultModule.createResult("interface",this.resultArray)};
         
-        this.filter = function(func,array){
-            this.resultArray = func(array);
+        this.filter = function(){
+            this.resultArray = [];
+
+            let criteria = {
+                identifier:jQuery("#identifierInput").val(),
+                questiontype:jQuery("#questiontype").val()
+            } 
+
+
         }
 
         return this;
     }
 
-    /*const searchTool = function(){
-        
-        this.resultArray = vpGetStructure().questionsSorted;
-
-        this.filter = function(func,array){
-            this.resultArray = func(array);
-        }
-
-        this.show = function(){searchResultModule.createResult("interface",this.resultArray)};
-
-        return this;
-    }*/
 
     const identifier = function(a){
 
