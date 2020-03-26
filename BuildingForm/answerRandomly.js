@@ -205,8 +205,10 @@ const answerRandomlyModule = (function ($, ksAPI) {
 		structureKeys = Object.keys(structure);
 		
 		for(obj in structureKeys){
+			if(structureKeys[obj].onPage){
+				goDroid(structure[structureKeys[obj]]);
+			}
 			
-			goDroid(structure[structureKeys[obj]]);
 		}
 		
 	}
