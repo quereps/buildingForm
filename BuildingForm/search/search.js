@@ -20,6 +20,7 @@ const searchModule = (function ($, ksAPI) {
 
 
         this.update = function(){
+            this.filter();
             this.show();
         }
         
@@ -33,6 +34,12 @@ const searchModule = (function ($, ksAPI) {
                 questiontype:jQuery("#questiontype").val()
             } 
 
+            let initialList = vpGetStructure().questionsSorted;
+
+            for(let id in initialList){
+                let question = structure[initialList[id]]
+                console.log(question);
+            }
 
         }
 
