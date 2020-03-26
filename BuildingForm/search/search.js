@@ -12,7 +12,7 @@ const searchModule = (function ($, ksAPI) {
 
     const searchTool = function(){
         
-        this.arrayKeys = Object.keys(structure);
+        this.arrayKeys = vpGetStructure().questionsSorted;
 
         this.show = function(){searchResultModule.createResult("interface",this.arrayKeys)};
 
