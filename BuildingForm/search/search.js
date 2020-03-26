@@ -38,7 +38,7 @@ const searchModule = (function ($, ksAPI) {
 
             for(let id in initialList){
                 let question = structure[initialList[id]]
-                console.log(question);
+                if(question.identifier.indexOf(criteria.identifier) )
             }
 
         }
