@@ -27,7 +27,7 @@ const InterfaceModule  = (function ($, ksAPI) {
 			jQuery("#interface .menu").append("<div class='menu'>"+this.name+"</div>");
 		}
 
-			console.log("initMenu"+this);
+			console.log("initMenu",this);
 		return this;
 	}
 
