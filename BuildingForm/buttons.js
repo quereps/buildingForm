@@ -33,6 +33,8 @@ const buttonModule = (function ($, ksAPI) {
 		}
 		
 		this.displayButton = function(){
+
+			console.log("displaying button", this.class)
 			this.updateclass();
 			this.updateHTML();
 			
