@@ -233,6 +233,7 @@ const answerRandomlyModule = (function ($, ksAPI) {
 				
 				if(vpFindQuestion(currentList)){
 					let idQuestion = vpFindQuestion(currentList).id
+					console.log(idQuestion);
 					structure[idQuestion].listOfText = listOfText[listOfTextKeys];
 				}
 				
