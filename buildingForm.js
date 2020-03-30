@@ -306,33 +306,7 @@ var questionTypeRef = {
 
 
 
-var getFirstQuestionOfPages = function(){
-	
-	var firstpageList = [];
-	var pages = vpGetStructure().questionsByVP;
-	
-	
-	for (var item in pages){
-		
-		
-		var firstQuestionID = pages[item][0];
-		var questionName = vpGetStructure().questionsMap[pages[item][0]].name;
-		
-		var questionRef = getRefbyId(firstQuestionID);
-		
-		if(vpGetIdentifierByReference(questionRef)){
-						questionRef = vpGetIdentifierByReference(questionRef);
-					}
-		
-		firstpageList=firstpageList+"<br>"+questionRef+" "+questionName;
-		
-	}
 
-	//InterfaceModule.showInterface("#main_frame",firstpageList);
-	InterfaceModule.create();
-    //InterfaceModule.addoptions("researchForm",search.form);
-
-}
 
 var showIdentifiers = function(){
 	
