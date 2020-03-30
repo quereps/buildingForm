@@ -537,14 +537,8 @@ const init = function(){
 	createToolBar();
 	$("#buildtoolsMain" ).append("<div title='Answer Randomly' class='icon random' onclick='buildingFormsModule.Random()'></div>");
 	$("#buildtoolsMain" ).append("<div title='Get Workflow' class='icon workflow' onclick='buildingFormsModule.workflow()'>Qx=Qx</div>");
-	$("#buildtoolsMain" ).append("<div title='Get Page Selector' class='icon pages' onclick='buildingFormsModule.getFirstQuestionOfPages()'>1st</div>");
-	
-	//buttonsTypes["getScoreFormula"]=new buttonTypeObj("buildingFormsModule.getScoreFormula()","getScoreFormula");
-	
-	
-	//buttons[getScoreFormula] = new buttonObj("page",buttonsTypes.getScoreFormula);
-	//buttons[getScoreFormula].displayButton();
-	 
+
+
 	
 	jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/structure.js", function() {
         console.log("structue.js Script loaded but not necessarily executed.");

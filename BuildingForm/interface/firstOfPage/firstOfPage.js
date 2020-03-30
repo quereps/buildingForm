@@ -28,6 +28,8 @@ const firstOfPageModule = (function ($, ksAPI) {
     
     }
 
+    //$("#buildtoolsMain" ).append("<div title='Get Page Selector' class='icon pages' onclick='buildingFormsModule.getFirstQuestionOfPages()'>1st</div>");
+
     const init = function(){
         notif("init FirstOf Module");
         InterfaceModule.addMenu("firstOfPage","firstOfPage");
