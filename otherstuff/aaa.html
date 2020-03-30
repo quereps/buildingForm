@@ -1,0 +1,86 @@
+<div class="summary">
+    <section class="grid location">
+        <h1>Location</h1>
+        <div class="gridleft">
+            <div class="map">
+                <img border="0" src="https://maps.googleapis.com/maps/api/staticmap?center={gps.A1},{gps.A2}&amp;zoom=12&amp;size=300x300&amp;markers=color:blue|label:{user.A1}|{gps.A1},{gps.A2}&amp;key=AIzaSyA84Hx0rIvVwYmF_A7vtoIl-uef9GR-yCg">
+            </div>
+        </div>
+        <div class="gridright">
+            <div class="weather {weather.A1} {weather.A2} {weather.A3} {weather.A4} {weather.A5} {weather.A6}"></div>
+            <p><b>Latitude:</b> {gps.A1}<br />
+            <b>Longitude:</b> {gps.A2}</p>
+            <p><b><u>Site:</u> {site}</b><br />
+            Address: {site.A6}<br />
+            State: {site.A5}<br />
+            City: {site.A4}<br /></p>
+        </div>
+    </section>
+    <section class="grid incident">
+        <h1>The incident</h1>
+        <div class="gridleft">
+            <h2>What happened?</h2>
+            <b>Type of Report: </b>{type}<br />
+            <b>Incident Type: </b>{Q10}<br />
+            <p>{Q9}</p>
+        </div>
+        <div class="gridright">
+            <h2>Outcome</h2>
+            <p>{Q13}</p>
+            <b>Measures Taken: </b>
+            <ul>
+                <li>{measures.A1}</li>
+                <li>{measures.A2}</li>
+                <li>{measures.A3}</li>
+                <li>{measures.A4}</li>
+                <li>{measures.A5}</li>
+            </ul>
+        </div>
+    </section>
+    <section class="grid person">
+        <h1>The Affected Persons</h1>
+        <div class="gridfull workers {catPerson.A1.C1}">
+            <h2>Workers</h2>
+            <table class="customTable">
+                <thead><tr>
+                    <th>Name</th><th>Address</th><th>Date of birth</th><th>Email</th></tr></thead>
+                    <tr class="hide{worker1}"><td>{worker1.A2}</td><td>{worker1.A5}</td><td>{worker1.A10}</td><td>{worker1.A3}</td></tr>
+                    <tr class="hide{worker2}"><td>{worker2.A2}</td><td>{worker2.A5}</td><td>{worker2.A10}</td><td>{worker2.A3}</td></tr>
+                    <tr class="hide{worker3}"><td>{worker3.A2}</td><td>{worker3.A5}</td><td>{worker3.A10}</td><td>{worker3.A3}</td></tr>
+                </table>
+        </div>
+        <div class="gridfull visitor {catPerson.A1.C1}">
+                <h2>Visitor</h2>
+                <table class="customTable">
+                    <thead>
+                        <tr><th>Name</th><th>Address</th><th>Date of birth</th><th>Email</th></tr></thead>
+                        <tr class="hide{person_details.C1}"><td>{person_details.A1.C1}</td><td>{person_details.A2.C1}</td><td>{person_details.A3.C1}</td><td>{person_details.A4.C1}</td></tr>
+                        <tr class="hide{person_details.C1}"><td>{person_details.A1.C2}</td><td>{person_details.A2.C2}</td><td>{person_details.A3.C2}</td><td>{person_details.A4.C2}</td></tr>
+                        <tr class="hide{person_details.C1}"><td>{person_details.A1.C3}</td><td>{person_details.A2.C3}</td><td>{person_details.A3.C3}</td><td>{person_details.A4.C3}</td></tr>
+                    </table>
+        </div>
+        <div class="gridfull contractor {catPerson.A1.C1}">
+                <h2>Contractors</h2>
+                <p>{contactor}</p>>
+        </div>
+    </section>
+    <section class="grid witness">
+            <h1>The witnesses</h1>
+            <div class="gridfull hide{witness1.A1}">
+                    <h2>{witness1.A1}</h2>
+                    <b>Phone Number: </b>{witness1.A2}<br />
+                    <p><b>Incident Statement: </b>{witness1.A3}</p>
+            </div>
+            <div class="gridfull hide{witness2.A1}">
+                    <h2>{witness2.A1}</h2>
+                    <b>Phone Number: </b>{witness2.A2}<br />
+                    <p><b>Incident Statement: </b>{witness2.A3}</p>
+            </div>
+            <div class="gridfull hide{witness3.A1}">
+                    <h2>{witness3.A1}</h2>
+                    <b>Phone Number: </b>{witness3.A2}<br />
+                    <p><b>Incident Statement: </b>{witness3.A3}</p>
+                </div>
+        </section>
+</div>
+
