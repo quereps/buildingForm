@@ -328,7 +328,9 @@ var getFirstQuestionOfPages = function(){
 		
 	}
 
-	InterfaceModule.showInterface("#main_frame",firstpageList);
+	//InterfaceModule.showInterface("#main_frame",firstpageList);
+	InterfaceModule.create();
+    //InterfaceModule.addoptions("researchForm",search.form);
 
 }
 

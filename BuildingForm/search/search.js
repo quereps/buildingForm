@@ -119,7 +119,7 @@ const searchModule = (function ($, ksAPI) {
 
     const launch = function(){
        notif("launching Search Module");
-       InterfaceModule.create();
+       InterfaceModule.show("search");
        InterfaceModule.addoptions("researchForm",search.form);
     }
 

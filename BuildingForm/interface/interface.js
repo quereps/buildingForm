@@ -1,6 +1,7 @@
 const InterfaceModule  = (function ($, ksAPI) {
 
 	let options = {};
+	let menu={};
 
 	const optionObj = function(id, content){
 		
@@ -17,7 +18,16 @@ const InterfaceModule  = (function ($, ksAPI) {
 		return this;
 	}
 
+	const menuObj = function(id, name){
+		this.id = id;
+		this. name = name;
 
+		this.init = function(){
+			jQuery("#interface .menu").append("<div class='menu'>"+this.name+"</div>");
+		}
+
+		return this;
+	}
 
 
 	const refresh = function(id, settings){
@@ -53,7 +63,10 @@ const InterfaceModule  = (function ($, ksAPI) {
 	
 	return {
 		init:function(){createInterface()},
-		create:function(){createInterface();show()},
+		create:function(){
+			createInterface();
+			//show()
+		},
 		remove:function(){removeInterface()},
 		show:function(){show()},
 		hide:function(){hide()},
