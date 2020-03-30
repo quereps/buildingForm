@@ -511,6 +511,11 @@ const init = function(){
         jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/summaryTable.js", function() {
             console.log("summaryTable.js Script loaded but not necessarily executed.");
             summaryTableModule.Start();
+		});
+		
+		jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/interface/firstOfPage/firstOfPage.js", function() {
+            console.log("firstOfPage.js Script loaded but not necessarily executed.");
+            summaryTableModule.Start();
         });
 	   
 		jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/search/search.js", function() {
