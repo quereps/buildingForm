@@ -33,6 +33,7 @@ const firstOfPageModule = (function ($, ksAPI) {
     const init = function(){
         notif("init FirstOf Module");
         InterfaceModule.addMenu("firstOfPage","firstOfPage");
+        buttonModule.New("page","firstOfPageModule.Launch()",["icon","pages"]);
     }
     
 	return{
