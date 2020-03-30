@@ -65,13 +65,13 @@ const InterfaceModule  = (function ($, ksAPI) {
 
 	const addMenu = function(id){
 		menu[id] = new menuObj(id, name);
+		menu[id].init();
 	}
 	
 	return {
 		init:function(){createInterface()},
 		create:function(){
 			createInterface();
-			//show()
 		},
 		remove:function(){removeInterface()},
 		show:function(menu){show(menu)},
