@@ -2,10 +2,7 @@ const searchModule = (function ($, ksAPI) {
 
     let search = {};
 
-    let menu = InterfaceModule.addMenu({
-        id:"search",
-        title:"Search"
-    });
+    let menu = InterfaceModule.addMenu("search","Search");
 
     const searchObj = function(){
         this.button = buttonModule.New("page","searchModule.Launch()",["icon","search"]);
