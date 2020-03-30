@@ -1,5 +1,7 @@
 const firstOfPageModule = (function ($, ksAPI) {
 
+const button = {};
+
     var getFirstQuestionOfPages = function(){
 	
         var firstpageList = [];
@@ -33,7 +35,8 @@ const firstOfPageModule = (function ($, ksAPI) {
     const init = function(){
         notif("init FirstOf Module");
         InterfaceModule.addMenu("firstOfPage","firstOfPage");
-        buttonModule.New("page","firstOfPageModule.Launch()",["icon","pages"]);
+        button = buttonModule.New("page","firstOfPageModule.Launch()",["icon","pages"]);
+        button.displayButton();
     }
     
 	return{
