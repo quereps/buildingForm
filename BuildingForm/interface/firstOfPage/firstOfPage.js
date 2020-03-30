@@ -1,6 +1,6 @@
 const firstOfPageModule = (function ($, ksAPI) {
 
-const button = {};
+let button = {};
 
     var getFirstQuestionOfPages = function(){
 	
