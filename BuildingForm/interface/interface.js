@@ -64,7 +64,7 @@ const InterfaceModule  = (function ($, ksAPI) {
 		options[id].init();
 	}
 
-	const addMenu = function(id){
+	const addMenu = function(id, name){
 		menu[id] = new menuObj(id, name);
 		menu[id].init();
 	}
