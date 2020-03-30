@@ -6,11 +6,9 @@ let button = {};
 	
         var firstpageList = [];
         var pages = vpGetStructure().questionsByVP;
-        
-        
+
         for (var item in pages){
-            
-            
+
             var firstQuestionID = pages[item][0];
             var questionName = vpGetStructure().questionsMap[pages[item][0]].name;
             
@@ -30,15 +28,19 @@ let button = {};
     
     }
 
-    //$("#buildtoolsMain" ).append("<div title='Get Page Selector' class='icon pages' onclick='buildingFormsModule.getFirstQuestionOfPages()'>1st</div>");
-
     const init = function(){
         notif("init FirstOf Module");
-        InterfaceModule.addMenu("firstOfPage","firstOfPage");
+        InterfaceModule.addMenu("firstOfPage","firstOfPage","firstOfPageModule.Launch()");
         button = buttonModule.New("page","firstOfPageModule.Launch()",["icon","pages"]);
         button.displayButton();
     }
     
+    const launch = function(){
+        notif("launch FirstOf Module");
+        getFirstQuestionOfPages();
+    }
+
+
 	return{
         Start:function(){init()},
         Launch:function(){launch()},

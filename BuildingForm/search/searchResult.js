@@ -46,8 +46,6 @@ const searchResultModule  = (function ($, ksAPI) {
 			}
 
 			InterfaceModule.addoptions("resultBtn",buttonsToAdd);
-            //jQuery("#"+this.id+" .options .Menu").remove();
-			//jQuery("#"+this.id+" .options").append("<div class='Menu'>"+buttonsToAdd+"</div>");
 		}
 
         this.labelBtn = "<button class='searchButton' onClick='searchResultModule.Refresh(\"questionLabel\")'>Labels</button>";

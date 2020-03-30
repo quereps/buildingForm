@@ -18,9 +18,10 @@ const InterfaceModule  = (function ($, ksAPI) {
 		return this;
 	}
 
-	const menuObj = function(id, name){
+	const menuObj = function(id, name, onclick){
 		this.id = id;
 		this.name = name;
+		this.onclick = onclick;
 
 		this.init = function(){
 			console.log("adding Menu", this.name);
@@ -64,8 +65,8 @@ const InterfaceModule  = (function ($, ksAPI) {
 		options[id].init();
 	}
 
-	const addMenu = function(id, name){
-		menu[id] = new menuObj(id, name);
+	const addMenu = function(id, name, onclick){
+		menu[id] = new menuObj(id, name, onclick);
 		menu[id].init();
 	}
 	
@@ -79,7 +80,7 @@ const InterfaceModule  = (function ($, ksAPI) {
 		hide:function(){hide()},
 		addcontent:function(content){addcontent(content)},
 		addoptions:function(id, content){addoptions(id, content)},
-		addMenu:function(id, name){addMenu(id, name)}
+		addMenu:function(id, name, onclick){addMenu(id, name, onclick)}
 	}
 	
 })(jQuery, ksAPI); 
