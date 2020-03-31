@@ -126,7 +126,7 @@ const searchModule = (function ($, ksAPI) {
 
     const launch = function(){
        notif("launching Search Module");
-       menu.launch("search");
+       menu.launch();
        
     }
 

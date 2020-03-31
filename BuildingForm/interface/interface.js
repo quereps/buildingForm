@@ -44,9 +44,11 @@ const InterfaceModule  = (function ($, ksAPI) {
 
 		this.launch = function(){
 
+			console.log("Launching ... ", this.id);
+
 			jQuery('#interface').removeClass("hide");
 			jQuery('#interface .options div').remove();
-			
+
 			for(let i in options){
 				this.options[i].init();
 			}
