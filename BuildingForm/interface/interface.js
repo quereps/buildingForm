@@ -73,10 +73,10 @@ const InterfaceModule  = (function ($, ksAPI) {
 		//options[id].init();
 	//}
 
-	const addMenu = function(id, name, onclick){
-		menu[id] = new menuObj(id, name, onclick);
+	//const addMenu = function(id, name, onclick){
+	//	new menuObj(id, name, onclick);
 		//menu[id].init();
-	}
+	//}
 	
 	return {
 		init:function(){createInterface()},
@@ -85,7 +85,7 @@ const InterfaceModule  = (function ($, ksAPI) {
 		hide:function(){hide()},
 		addcontent:function(content){addcontent(content)},
 		//addoptions:function(id, content){addoptions(id, content)},
-		addMenu:function(id, name, onclick){addMenu(id, name, onclick)}
+		addMenu:function(id, name, onclick){new menuObj(id, name, onclick)}
 	}
 	
 })(jQuery, ksAPI); 
