@@ -22,7 +22,7 @@ const InterfaceModule  = (function ($, ksAPI) {
 		this.options = {};
 		this.button = "";
 
-		this.addOption = function(){
+		this.addOption = function(id, content){
 			this.options[id] = new optionObj(id, content);
 		}
 
@@ -84,7 +84,7 @@ const InterfaceModule  = (function ($, ksAPI) {
 		show:function(menu){show(menu)},
 		hide:function(){hide()},
 		addcontent:function(content){addcontent(content)},
-		//addoptions:function(id, content){addoptions(id, content)},
+		//addoptions:function(id, content){return new optionObj(id, content);},
 		addMenu:function(id, name, onclick){return new menuObj(id, name, onclick)}
 	}
 	
