@@ -1,7 +1,7 @@
 const InterfaceModule  = (function ($, ksAPI) {
 
-	let options = {};
-	let menu={};
+	//let options = {};
+	//let menu={};
 
 	const optionObj = function(id, content){
 		
@@ -22,6 +22,8 @@ const InterfaceModule  = (function ($, ksAPI) {
 		this.id = id;
 		this.name = name;
 		this.onclick = onclick;
+		this.options = [];
+		this.button = "";
 
 		this.init = function(){
 			console.log("adding Menu", this.name);

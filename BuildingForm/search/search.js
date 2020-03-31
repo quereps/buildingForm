@@ -1,12 +1,27 @@
 const searchModule = (function ($, ksAPI) {
 
-    let search = {};
+    //let search = {};
 
-    let menu = InterfaceModule.addMenu("search","Search");
+    let menu = InterfaceModule.addMenu("search","Search",searchModule.Launch());
+
+    menu.button = buttonModule.New("page","searchModule.Launch()",["icon","search"]);
+    menu.options.push(InterfaceModule.addoptions("researchForm",
+        "<label>Identifier</label><input id='identifierInput' type='text' onkeyup='searchModule.update()'></input>"+
+            "<label>Question Type:</label>"+
+            "<select id='questiontype' onchange='searchModule.update()'><option value='CHECKALL_NO_OTHER'>CHECKALL_NO_OTHER</option>"+
+            "<option value='HEADER'>HEADER</option>"+
+            "<option value='MULTI_LINE'>MULTI_LINE</option>"+
+            "<option value='PICK_ONE_WITH_OTHER'>PICK_ONE_WITH_OTHER</option>"+
+            "<option value='PICK_ONE_NO_OTHER'>PICK_ONE_NO_OTHER</option>"+
+            "<option value='SINGLE_LINE'>SINGLE_LINE</option></select>"
+    ));
+
+    //InterfaceModule.addoptions("researchForm",search.form);
+
 
     const searchObj = function(){
-        this.button = buttonModule.New("page","searchModule.Launch()",["icon","search"]);
-        this.form = 
+        //this.button = buttonModule.New("page","searchModule.Launch()",["icon","search"]);
+        /*this.form = 
             "<label>Identifier</label><input id='identifierInput' type='text' onkeyup='searchModule.update()'></input>"+
             "<label>Question Type:</label>"+
             "<select id='questiontype' onchange='searchModule.update()'><option value='CHECKALL_NO_OTHER'>CHECKALL_NO_OTHER</option>"+
@@ -15,7 +30,7 @@ const searchModule = (function ($, ksAPI) {
             "<option value='PICK_ONE_WITH_OTHER'>PICK_ONE_WITH_OTHER</option>"+
             "<option value='PICK_ONE_NO_OTHER'>PICK_ONE_NO_OTHER</option>"+
             "<option value='SINGLE_LINE'>SINGLE_LINE</option></select>";
-        
+        */
         this.resultArray = vpGetStructure().questionsSorted;
 
 
@@ -121,7 +136,7 @@ const searchModule = (function ($, ksAPI) {
     const launch = function(){
        notif("launching Search Module");
        InterfaceModule.show("search");
-       InterfaceModule.addoptions("researchForm",search.form);
+       
     }
 
 
