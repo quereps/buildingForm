@@ -5,7 +5,7 @@ const searchModule = (function ($, ksAPI) {
     let menu = InterfaceModule.addMenu("search","Search","searchModule.Launch()");
 
     menu.button = buttonModule.New("page","searchModule.Launch()",["icon","search"]);
-    menu.options.push(menu.addoption("researchForm",
+    menu.options.push(menu.addOption("researchForm",
         "<label>Identifier</label><input id='identifierInput' type='text' onkeyup='searchModule.update()'></input>"+
             "<label>Question Type:</label>"+
             "<select id='questiontype' onchange='searchModule.update()'><option value='CHECKALL_NO_OTHER'>CHECKALL_NO_OTHER</option>"+
