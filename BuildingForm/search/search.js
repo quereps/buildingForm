@@ -14,7 +14,7 @@ const searchModule = (function ($, ksAPI) {
             "<option value='PICK_ONE_WITH_OTHER'>PICK_ONE_WITH_OTHER</option>"+
             "<option value='PICK_ONE_NO_OTHER'>PICK_ONE_NO_OTHER</option>"+
             "<option value='SINGLE_LINE'>SINGLE_LINE</option></select>"
-    ));
+    );
 
     //InterfaceModule.addoptions("researchForm",search.form);
 
