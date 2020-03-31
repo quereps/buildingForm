@@ -1,8 +1,5 @@
 const InterfaceModule  = (function ($, ksAPI) {
 
-	//let options = {};
-	//let menu={};
-
 	const optionObj = function(id, content){
 		
 		this.id = id;
@@ -22,8 +19,22 @@ const InterfaceModule  = (function ($, ksAPI) {
 		this.id = id;
 		this.name = name;
 		this.onclick = onclick;
-		this.options = [];
+		this.options = {};
 		this.button = "";
+
+		this.addOption = function(){
+			this.options[id] = new optionObj(id, content);
+		}
+
+		this.show = function(){
+			jQuery('#interface').removeClass("hide");
+			jQuery('#interface .options div').remove();
+		}
+
+		this.hide = function(){
+			jQuery('#interface .options div').remove();
+			jQuery('#interface .content').empty();
+		}
 
 		this.init = function(){
 			console.log("adding Menu", this.name);
@@ -34,11 +45,6 @@ const InterfaceModule  = (function ($, ksAPI) {
 		return this;
 	}
 
-
-	const refresh = function(id, settings){
-        let toShow = interfaces[id].show(settings);
-        jQuery(".result").html(toShow);
-	}
 	
 	const createInterface = function(){
 		console.log("createInterface");
@@ -64,19 +70,16 @@ const InterfaceModule  = (function ($, ksAPI) {
 
 	const addoptions = function(id, content){
 		options[id] = new optionObj(id, content);
-		options[id].init();
+		//options[id].init();
 	}
 
 	const addMenu = function(id, name, onclick){
 		menu[id] = new menuObj(id, name, onclick);
-		menu[id].init();
+		//menu[id].init();
 	}
 	
 	return {
 		init:function(){createInterface()},
-		create:function(){
-			createInterface();
-		},
 		remove:function(){removeInterface()},
 		show:function(menu){show(menu)},
 		hide:function(){hide()},
