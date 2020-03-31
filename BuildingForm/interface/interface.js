@@ -68,15 +68,15 @@ const InterfaceModule  = (function ($, ksAPI) {
 	//	jQuery('#interface .content').append("<div>"+a+"</div>");
 	//}
 
-	const addoptions = function(id, content){
-		options[id] = new optionObj(id, content);
+	//const addoptions = function(id, content){
+	//	options[id] = new optionObj(id, content);
 		//options[id].init();
-	}
+	//}
 
-	const addMenu = function(id, name, onclick){
-		menu[id] = new menuObj(id, name, onclick);
+	//const addMenu = function(id, name, onclick){
+	//	menu[id] = new menuObj(id, name, onclick);
 		//menu[id].init();
-	}
+	//}
 	
 	return {
 		init:function(){createInterface()},
