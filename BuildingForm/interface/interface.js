@@ -26,10 +26,10 @@ const InterfaceModule  = (function ($, ksAPI) {
 			this.options[id] = new optionObj(id, content);
 		}
 
-		this.show = function(){
-			jQuery('#interface').removeClass("hide");
-			jQuery('#interface .options div').remove();
-		}
+		//this.show = function(){
+		//	jQuery('#interface').removeClass("hide");
+		//	jQuery('#interface .options div').remove();
+		//}
 
 		this.hide = function(){
 			jQuery('#interface .options div').remove();
@@ -40,6 +40,17 @@ const InterfaceModule  = (function ($, ksAPI) {
 			console.log("adding Menu", this.name);
 			//jQuery("#interface .menu").append("<div onclick='"+this.onclick+"' class='"+this.name+"'>"+this.name+"</div>");
 			this.button.displayButton();
+		}
+
+		this.launch = function(){
+
+			jQuery('#interface').removeClass("hide");
+			jQuery('#interface .options div').remove();
+			
+			for(let i in options){
+				this.options[i].init();
+			}
+			
 		}
 
 			console.log("initMenu",this);
