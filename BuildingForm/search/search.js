@@ -1,6 +1,6 @@
 const searchModule = (function ($, ksAPI) {
 
-    //let search = {};
+    let search = {};
 
     let menu = InterfaceModule.addMenu("search","Search","searchModule.Launch()");
 
@@ -125,7 +125,7 @@ const searchModule = (function ($, ksAPI) {
 
     const launch = function(){
        notif("launching Search Module");
-       InterfaceModule.show("search");
+       menu.show("search");
        
     }
 
@@ -133,7 +133,7 @@ const searchModule = (function ($, ksAPI) {
 	const init = function(){
         notif("Search Init");
         search = new searchObj();
-        search.button.displayButton();
+        //search.button.displayButton();
     }
 
     const update = function(settings){
