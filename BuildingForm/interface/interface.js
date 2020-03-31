@@ -49,7 +49,7 @@ const InterfaceModule  = (function ($, ksAPI) {
 			jQuery('#interface').removeClass("hide");
 			jQuery('#interface .options div').remove();
 
-			for(let i in options){
+			for(let i in this.options){
 				this.options[i].init();
 			}
 			
