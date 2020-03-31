@@ -2,7 +2,7 @@ const searchModule = (function ($, ksAPI) {
 
     //let search = {};
 
-    let menu = InterfaceModule.addMenu("search","Search",searchModule.Launch());
+    let menu = InterfaceModule.addMenu("search","Search","searchModule.Launch()");
 
     menu.button = buttonModule.New("page","searchModule.Launch()",["icon","search"]);
     menu.options.push(InterfaceModule.addoptions("researchForm",
