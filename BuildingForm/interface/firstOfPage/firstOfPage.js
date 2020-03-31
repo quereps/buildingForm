@@ -30,7 +30,7 @@ let button = {};
 
     const init = function(){
         notif("init FirstOf Module");
-        InterfaceModule.addMenu("firstOfPage","firstOfPage","firstOfPageModule.Launch()");
+        //InterfaceModule.addMenu("firstOfPage","firstOfPage","firstOfPageModule.Launch()");
         button = buttonModule.New("page","firstOfPageModule.Launch()",["icon","pages"]);
         button.displayButton();
     }
