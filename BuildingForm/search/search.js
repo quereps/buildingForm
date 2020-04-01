@@ -62,9 +62,9 @@ const searchModule = (function ($, ksAPI) {
     );
     menu.init();
 
-    menu.labelBtn = "<button class='searchButton' onClick='searchResultModule.Refresh(\"questionLabel\")'>Labels</button>";
-    menu.bestRefBtn = "<button class='searchButton' onClick='searchResultModule.Refresh(\"bestRef\")'>Ref</button>";
-    menu.pipingBtn = "<button class='searchButton' onClick='searchResultModule.Refresh(\"piping\")'>Piping</button>";
+    menu.labelBtn = "<button class='searchButton' onClick='searchModule.Refresh(\"questionLabel\")'>Labels</button>";
+    menu.bestRefBtn = "<button class='searchButton' onClick='searchModule.Refresh(\"bestRef\")'>Ref</button>";
+    menu.pipingBtn = "<button class='searchButton' onClick='searchModule.Refresh(\"piping\")'>Piping</button>";
 		
     menu.resultButtons = [this.labelBtn,this.bestRefBtn,this.pipingBtn];
 
