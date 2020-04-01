@@ -72,6 +72,7 @@ const searchModule = (function ($, ksAPI) {
         let buttonsToAdd = "";
         
         for(but in menu.resultButtons){
+            console.log(menu.resultButtons[but]);
             buttonsToAdd = buttonsToAdd + menu.resultButtons[but];
         }
         menu.addOption("resultBtn", buttonsToAdd);
