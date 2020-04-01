@@ -68,11 +68,11 @@ const searchModule = (function ($, ksAPI) {
 		
     menu.resultButtons = [this.labelBtn,this.bestRefBtn,this.pipingBtn];
 
-    menu.addResultButtons = function(buttons){
+    menu.addResultButtons = function(){
         let buttonsToAdd = "";
         
-        for(but in buttons){
-            buttonsToAdd = buttonsToAdd + buttons[but];
+        for(but in menu.resultButtons){
+            buttonsToAdd = buttonsToAdd + menu.resultButtons[but];
         }
 
         menu.addOption("resultBtn",buttonsToAdd);
