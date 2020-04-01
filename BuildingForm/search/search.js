@@ -60,7 +60,7 @@ const searchModule = (function ($, ksAPI) {
             "<option value='PICK_ONE_NO_OTHER'>PICK_ONE_NO_OTHER</option>"+
             "<option value='SINGLE_LINE'>SINGLE_LINE</option></select>"
     );
-    menu.init();
+    
 
     menu.labelBtn = "<button class='searchButton' onClick='searchModule.Refresh(\"questionLabel\")'>Labels</button>";
     menu.bestRefBtn = "<button class='searchButton' onClick='searchModule.Refresh(\"bestRef\")'>Ref</button>";
@@ -74,10 +74,13 @@ const searchModule = (function ($, ksAPI) {
         for(but in menu.resultButtons){
             buttonsToAdd = buttonsToAdd + menu.resultButtons[but];
         }
-
-        menu.addOption("resultBtn",buttonsToAdd);
+        menu.addOption("resultBtn", buttonsToAdd);
     }
 
+    menu.addResultButtons();
+    
+
+    menu.init();
 
     const searchObj = function(){
 
