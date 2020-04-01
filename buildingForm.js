@@ -522,10 +522,10 @@ const init = function(){
 			console.log("searchModule Script loaded but not necessarily executed.");
 			searchModule.Start();
 
-			jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/search/searchResult.js", function() {
-				console.log("searchResult Script loaded but not necessarily executed.");
-				searchResultModule.Start();
-			});
+			//jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/search/searchResult.js", function() {
+			//	console.log("searchResult Script loaded but not necessarily executed.");
+			//	searchResultModule.Start();
+			//});
 	 	});
 	 
 
