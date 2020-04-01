@@ -33,7 +33,7 @@ const searchModule = (function ($, ksAPI) {
         }
         
 		if(jQuery("#resultBtn").length==0){
-			this.addMenu(this.buttons);
+			menu.addResultButtons(this.buttons);
 		}
         
         
@@ -75,7 +75,7 @@ const searchModule = (function ($, ksAPI) {
             buttonsToAdd = buttonsToAdd + buttons[but];
         }
 
-        menu.addResultButtons("resultBtn",buttonsToAdd);
+        menu.addOption("resultBtn",buttonsToAdd);
     }
 
 
