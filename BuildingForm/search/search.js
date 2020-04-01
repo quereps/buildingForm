@@ -92,7 +92,9 @@ const searchModule = (function ($, ksAPI) {
         
         this.show = function(){
             //menu.addResultButtons
+            console.log("creating results");
             result = new newResult("interface",this.resultArray);
+            result.show("bestRef");
         };
         
         this.criteria = {
@@ -106,6 +108,7 @@ const searchModule = (function ($, ksAPI) {
         }
 
         this.filter = function(){
+            console.log("Filtering");
             this.resultArray = [];
 
             let initialList = vpGetStructure().questionsSorted;
@@ -200,6 +203,7 @@ const searchModule = (function ($, ksAPI) {
     }
 
     const update = function(settings){
+        console.log("We will update");
         search.update();
     }
     
