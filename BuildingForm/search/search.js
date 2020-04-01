@@ -1,5 +1,50 @@
 const searchModule = (function ($, ksAPI) {
 
+    let result = {};
+
+    const presentData = function(dataArray){
+		
+		let toReturn = "<table style='margin:auto;' class='resultTable'>";
+		
+		for(let i in dataArray){
+			toReturn = toReturn + "<tr><td>"+dataArray[i]+"</td></tr>"
+		}
+
+		toReturn = toReturn + "</table>";
+
+		return toReturn;
+	}
+
+
+    const newResult = function(idTarget, questionIdArray){
+
+		this.id = idTarget;
+        this.questionIdList = questionIdArray;
+        
+		this.getAData = function(prop){ // return a specific prop of the question object (label, identifier, Qref)
+			let toReturn = [];
+			
+			for(questionId in this.questionIdList){
+				let question = structure[this.questionIdList[questionId]];
+				toReturn.push(question[prop]);
+			}
+			
+			return presentData(toReturn);
+        }
+        
+		if(jQuery("#resultBtn").length==0){
+			this.addMenu(this.buttons);
+		}
+        
+        
+        this.show = function(settings){
+            jQuery("#"+this.id+" .content").html(this.getAData(settings));
+        }
+		
+		return this;
+    }
+    
+
     let search = {};
 
     let menu = InterfaceModule.addMenu("search","Search","searchModule.Launch()");
@@ -17,7 +62,21 @@ const searchModule = (function ($, ksAPI) {
     );
     menu.init();
 
-    //InterfaceModule.addoptions("researchForm",search.form);
+    menu.labelBtn = "<button class='searchButton' onClick='searchResultModule.Refresh(\"questionLabel\")'>Labels</button>";
+    menu.bestRefBtn = "<button class='searchButton' onClick='searchResultModule.Refresh(\"bestRef\")'>Ref</button>";
+    menu.pipingBtn = "<button class='searchButton' onClick='searchResultModule.Refresh(\"piping\")'>Piping</button>";
+		
+    menu.resultButtons = [this.labelBtn,this.bestRefBtn,this.pipingBtn];
+
+    menu.addResultButtons = function(buttons){
+        let buttonsToAdd = "";
+        
+        for(but in buttons){
+            buttonsToAdd = buttonsToAdd + buttons[but];
+        }
+
+        menu.addResultButtons("resultBtn",buttonsToAdd);
+    }
 
 
     const searchObj = function(){
@@ -31,7 +90,10 @@ const searchModule = (function ($, ksAPI) {
             this.filter();
         }
         
-        this.show = function(){searchResultModule.createResult("interface",this.resultArray)};
+        this.show = function(){
+            //menu.addResultButtons
+            result = new newResult("interface",this.resultArray);
+        };
         
         this.criteria = {
             identifier:"",
