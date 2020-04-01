@@ -215,7 +215,7 @@ const searchModule = (function ($, ksAPI) {
         Start:function(){init()},
         Launch:function(){launch()},
         update:function(){update()},
-        Refresh:function(){search.update()},
+        Refresh:function(settings){result.show(settings)},
         //getQIdentifierTextContain:function(a){getQIdentifierTextContain(a)},
         //Create:function(settings){createSearchTool(settings)}
 	}
