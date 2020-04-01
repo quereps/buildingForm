@@ -193,31 +193,12 @@ const searchModule = (function ($, ksAPI) {
 	
 	}*/
 
-    const launch = function(){
-       notif("launching Search Module");
-       menu.launch();
-       
-    }
-
-
-	const init = function(){
-        notif("Search Init");
-        search = new searchObj();
-        //search.button.displayButton();
-    }
-
-    const update = function(settings){
-        console.log("We will update");
-        search.update();
-    }
     
 	return{
-        Start:function(){init()},
-        Launch:function(){launch()},
-        update:function(){update()},
+        Start:function(){search = new searchObj();},
+        Launch:function(){menu.launch();},
+        update:function(){search.update();},
         Refresh:function(settings){result.show(settings)},
-        //getQIdentifierTextContain:function(a){getQIdentifierTextContain(a)},
-        //Create:function(settings){createSearchTool(settings)}
 	}
 	
 })(jQuery, ksAPI);
