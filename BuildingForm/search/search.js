@@ -66,7 +66,7 @@ const searchModule = (function ($, ksAPI) {
     menu.bestRefBtn = "<button class='searchButton' onClick='searchModule.Refresh(\"bestRef\")'>Ref</button>";
     menu.pipingBtn = "<button class='searchButton' onClick='searchModule.Refresh(\"piping\")'>Piping</button>";
 		
-    menu.resultButtons = [this.labelBtn,this.bestRefBtn,this.pipingBtn];
+    menu.resultButtons = [menu.labelBtn,menu.bestRefBtn,menu.pipingBtn];
 
     menu.addResultButtons = function(){
         let buttonsToAdd = "";
