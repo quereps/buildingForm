@@ -239,7 +239,7 @@ const tableObj = function(name){
 	
 	this.apply = function(){
 		this.createRows();
-		InterfaceModule.Interface("#main_frame","<div id='tableOutput'>"+this.getHTML()+"</div><div id='tableOutputText'></div>");
+		//InterfaceModule.Interface("#main_frame","<div id='tableOutput'>"+this.getHTML()+"</div><div id='tableOutputText'></div>");
 		jQuery("#tableOutputText").text(this.gettxtHTML());
 		this.addOptions();
 	}
