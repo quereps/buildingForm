@@ -21,6 +21,7 @@ const InterfaceModule  = (function ($, ksAPI) {
 		this.onclick = onclick;
 		this.options = {};
 		this.buttons = [];
+		this.content = "";
 
 		this.addOption = function(id, content){
 			this.options[id] = new optionObj(id, content);

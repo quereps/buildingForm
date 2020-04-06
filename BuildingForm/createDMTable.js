@@ -29,33 +29,16 @@ const createDMTable = (function ($, ksAPI) {
 		 tableOutput.apply();
 	}
 	
-	
-	
-
-
 	const init = function(){
 		   
-		
-
-		
-			//buttonModule.NewType("addHTMLTable","buildingFormsModule.CreateDMTableRun(this)","addHTMLTable");
-			//let buttons = {};
-
 			var onscreen = jQuery(".aDivtypeSingleline, .aDivtypeDropdownList");
 			for(var i=0;i<onscreen.length;i++){
 				let theID = onscreen[i].id.split("questionDivEntireId")[1];			
-				//console.log(theID);
-				//buttonModule.New(theID,theID,"addHTMLTable");
 				menu.buttons[theID] = buttonModule.New(theID,"createDMTable.Run(this)",["icon","addHTMLTable"]);
-				//menu.buttons[theID].displayButton();
 			}
-
-
 			menu.init();
-
 	}
 
-		
 	return{
 		Remove:function(a){tableOutput.removedata(a)},
 		Run:function(a){run(a)},

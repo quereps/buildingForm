@@ -148,7 +148,8 @@ const answerObj = function(qid,aid,ref){
 const tableObj = function(name){
 	
 	this.name = name;
-	
+	this.destination = "#interface .content";
+
 	this.outputObj = {start:"<table id='table"+name+"' class='customTable'>",rows:{},end: "</table>"};
 	this.outputTextObj = {start:"<table id='table"+name+"' class='customTable'>",rows:{},end: "</table>"};
 	
@@ -238,9 +239,11 @@ const tableObj = function(name){
 	this.updateHTML();
 	
 	this.apply = function(){
+
+		console.log("apppplyyyy);
 		this.createRows();
 		//InterfaceModule.Interface("#main_frame","<div id='tableOutput'>"+this.getHTML()+"</div><div id='tableOutputText'></div>");
-		jQuery("#tableOutputText").text(this.gettxtHTML());
+		jQuery(this.destination).text(this.gettxtHTML());
 		this.addOptions();
 	}
 
