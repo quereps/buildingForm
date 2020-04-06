@@ -240,9 +240,11 @@ const tableObj = function(name){
 	this.updateHTML();
 	
 	this.apply = function(){
-
+		
 		console.log("apppplyyyy");
 		this.createRows();
+
+		jQuery(this.destination+" #tableOutput").remove();
 		jQuery(this.destination).append("<div id='tableOutput'>"+this.getHTML()+"</div><div id='tableOutputText'></div>");
 		jQuery(this.destination+" #tableOutputText").text(this.gettxtHTML());
 		this.addOptions();
