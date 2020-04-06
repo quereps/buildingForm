@@ -222,7 +222,7 @@ const tableObj = function(name){
 		for(let i=0;i<list.length;i++){
 			console.log(list[i]);
 			let id = jQuery(list[i]).find("th")[0].id;
-			jQuery(list[i]).append("<div class='optionsTable'><div id='remove"+id+"' onclick='buildingFormsModule.createDMTableRemove(this)' class='icon remove'></div></div>");
+			jQuery(list[i]).append("<td class='optionsTable'><div id='remove"+id+"' onclick='buildingFormsModule.createDMTableRemove(this)' class='icon remove'></div></td>");
 		}
 	}
 	
