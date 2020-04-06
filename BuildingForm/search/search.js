@@ -136,10 +136,13 @@ const searchModule = (function ($, ksAPI) {
                         let string = JSON.stringify(question.identifier);
                         console.log("string", string);
                         console.log("index", string.indexOf(this.criteria.identifier));
-                        if(!string.indexOf(this.criteria.identifier)>0){
+                        if(string.indexOf(this.criteria.identifier)>0){
                             console.log("hiiii3");
                             //this.resultArray.push(question.id);
-                            console.log(question, "not in criteria identifier");
+                            console.log(question, "contain identifier");
+                            
+                        }
+                        else{
                             canReturn=false;
                         }
                     }
