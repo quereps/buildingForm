@@ -54,6 +54,7 @@ const searchModule = (function ($, ksAPI) {
         "<label>Identifier</label><input id='identifierInput' type='text' onkeyup='searchModule.update()'></input>"+
             "<label>Question Type:</label>"+
             "<select id='questiontype' onchange='searchModule.update()'>"+
+            "<option value=''></option>"+
             "<option value='CHECKALL_NO_OTHER'>CHECKALL_NO_OTHER</option>"+
             "<option value='HEADER'>HEADER</option>"+
             "<option value='MULTI_LINE'>MULTI_LINE</option>"+
@@ -131,8 +132,10 @@ const searchModule = (function ($, ksAPI) {
                     console.log("hiiii");
 
                     if(question.identifier){
-                        console.log("hiiii2");
+                        
                         let string = JSON.stringify(question.identifier);
+                        console.log("string", string);
+                        console.log("index", string.indexOf(this.criteria.identifier));
                         if(!string.indexOf(this.criteria.identifier)>0){
                             console.log("hiiii3");
                             //this.resultArray.push(question.id);
