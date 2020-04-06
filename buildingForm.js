@@ -620,6 +620,8 @@ jQuery("head").append("<style>.hide{display:none !important;}.sum.icon{backgroun
 ".options{padding-top:70px;border-left:1px solid}.options div{padding:20px 0;width:100%;border-bottom: 1px solid #333}button.searchButton {border:none;font-size:16px;margin:5pxborder:2px solid;}"
 +
 ".menu div {width: 100%;height: 40px;line-height: 40px;border-bottom: 1px solid grey;}"+
+"table.resultTable {margin: 20px auto !important;background:#dcf0f5;border-radius:8px}"+
+"table.resultTable tr td{border-bottom:2px solid black !important;line-height:40px;min-width:300px;}"+
 "</style>");
 
 
