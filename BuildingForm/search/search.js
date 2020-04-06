@@ -61,7 +61,8 @@ const searchModule = (function ($, ksAPI) {
             "<option value='PICK_ONE_WITH_OTHER'>PICK_ONE_WITH_OTHER</option>"+
             "<option value='PICK_ONE_NO_OTHER'>PICK_ONE_NO_OTHER</option>"+
             "<option value='SINGLE_LINE'>SINGLE_LINE</option>"+
-            "</select>"
+            "</select>"+
+            "<label>Nb Answer options</label><input id='nbAnswers' type='number' onkeyup='searchModule.update()'></input>"
     );
     
 
@@ -106,12 +107,14 @@ const searchModule = (function ($, ksAPI) {
         
         this.criteria = {
             identifier:"",
-            questiontype:""
+            questiontype:"",
+            nbAnswers:0
         } 
 
         this.updateCriteria = function(){
             this.criteria.identifier = jQuery("#identifierInput").val();
             this.criteria.questiontype = jQuery("#questiontype").val();
+            this.criteria.nbAnswers = jQuery("#nbAnswers").val();
         }
 
         this.filter = function(){
@@ -156,6 +159,17 @@ const searchModule = (function ($, ksAPI) {
                     if(question.type){
                         if(question.type!=this.criteria.questiontype){
                             console.log(question, "not in criteria type");
+                            canReturn=false;
+                        }
+                    }
+                }
+
+
+                if(this.criteria.nbAnswers>0){
+                    
+                    if(question.type){
+                        if(question.nbOfAnswers!=this.criteria.nbAnswers){
+                            console.log("nb diff");
                             canReturn=false;
                         }
                     }
