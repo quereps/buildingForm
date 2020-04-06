@@ -126,9 +126,14 @@ const searchModule = (function ($, ksAPI) {
                 let canReturn = true;
 
                 if(this.criteria.identifier.length>0){
+
+                    console.log("hiiii");
+
                     if(question.identifier){
+                        console.log("hiiii2");
                         let string = JSON.stringify(question.identifier);
                         if(!string.indexOf(this.criteria.identifier)>0){
+                            console.log("hiiii3");
                             //this.resultArray.push(question.id);
                             console.log(question, "not in criteria identifier");
                             canReturn=false;
@@ -137,6 +142,7 @@ const searchModule = (function ($, ksAPI) {
                 }
 
                 if(this.criteria.questiontype.length>0){
+                    console.log("hiiii4");
                     if(question.type){
                         if(!question.type==this.criteria.questiontype){
                             console.log(question.identifier, "not in criteria type");
