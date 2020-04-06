@@ -242,8 +242,8 @@ const tableObj = function(name){
 
 		console.log("apppplyyyy");
 		this.createRows();
-		//InterfaceModule.Interface("#main_frame","<div id='tableOutput'>"+this.getHTML()+"</div><div id='tableOutputText'></div>");
-		jQuery(this.destination).text(this.gettxtHTML());
+		jQuery(this.destination).append("<div id='tableOutput'>"+this.getHTML()+"</div><div id='tableOutputText'></div>");
+		jQuery(this.destination+" #tableOutputText").text(this.gettxtHTML());
 		this.addOptions();
 	}
 
