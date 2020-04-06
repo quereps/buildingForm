@@ -62,7 +62,7 @@ const searchModule = (function ($, ksAPI) {
             "<option value='PICK_ONE_NO_OTHER'>PICK_ONE_NO_OTHER</option>"+
             "<option value='SINGLE_LINE'>SINGLE_LINE</option>"+
             "</select>"+
-            "<label>Nb Answer options</label><input id='nbAnswers' type='number' onkeyup='searchModule.update()'></input>"
+            "<label>Nb Answer options</label><input id='nbAnswers' type='number' onchange='searchModule.update()' onkeyup='searchModule.update()'></input>"
     );
     
 
