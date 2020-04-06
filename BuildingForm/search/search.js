@@ -151,6 +151,9 @@ const searchModule = (function ($, ksAPI) {
                     }
                 }
 
+
+                console.log(canReturn);
+
                 if(canReturn==true){
                     this.resultArray.push(question.id);
                 }
