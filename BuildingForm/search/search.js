@@ -143,7 +143,7 @@ const searchModule = (function ($, ksAPI) {
                     }
                 }
 
-                if(canReturn){
+                if(canReturn==true){
                     this.resultArray.push(question.id);
                 }
                 
