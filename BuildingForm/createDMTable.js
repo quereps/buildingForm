@@ -33,7 +33,7 @@ const createDMTable = (function ($, ksAPI) {
 		let menu = InterfaceModule.addMenu("addHTMLTable","addHTMLTable","addHTMLTable.Run(this)");
 		menu.buttons.push(buttonModule.New("page","addHTMLTable.Run(this)",["icon","addHTMLTable"]));
 
-		menu.init();
+		
 			//buttonModule.NewType("addHTMLTable","buildingFormsModule.CreateDMTableRun(this)","addHTMLTable");
 			//let buttons = {};
 
@@ -45,6 +45,9 @@ const createDMTable = (function ($, ksAPI) {
 				menu.buttons[theID] = buttonModule.New(theID,"addHTMLTable.Run(this)",["icon","addHTMLTable"]);
 				//menu.buttons[theID].displayButton();
 			}
+
+
+			menu.init();
 
 	}
 
