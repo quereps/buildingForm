@@ -130,14 +130,16 @@ const searchModule = (function ($, ksAPI) {
                         let string = JSON.stringify(question.identifier);
                         if(!string.indexOf(this.criteria.identifier)>0){
                             //this.resultArray.push(question.id);
+                            console.log(question, "not in criteria identifier");
                             canReturn=false;
                         }
                     }
                 }
 
                 if(this.criteria.questiontype.length>0){
-                    if(question.identifier){
+                    if(question.type){
                         if(!question.type==this.criteria.questiontype){
+                            console.log(question.identifier, "not in criteria type");
                             canReturn=false;
                         }
                     }
