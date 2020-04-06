@@ -31,19 +31,19 @@ const createDMTable = (function ($, ksAPI) {
 	const init = function(){
 		   
 		let menu = InterfaceModule.addMenu("addHTMLTable","addHTMLTable","addHTMLTable.Run(this)");
-		menu.button = buttonModule.New("page","addHTMLTable.Run(this)",["icon","addHTMLTable"]);
+		menu.buttons.push(buttonModule.New("page","addHTMLTable.Run(this)",["icon","addHTMLTable"]));
 
 		menu.init();
 			//buttonModule.NewType("addHTMLTable","buildingFormsModule.CreateDMTableRun(this)","addHTMLTable");
-			let buttons = {};
+			//let buttons = {};
 
 			var onscreen = jQuery(".aDivtypeSingleline, .aDivtypeDropdownList");
 			for(var i=0;i<onscreen.length;i++){
-			let theID = onscreen[i].id.split("questionDivEntireId")[1];			
-				console.log(theID);
+				let theID = onscreen[i].id.split("questionDivEntireId")[1];			
+				//console.log(theID);
 				//buttonModule.New(theID,theID,"addHTMLTable");
-				buttons[theID] = buttonModule.New(theID,"addHTMLTable.Run(this)",["icon","addHTMLTable"]);
-				buttons[theID].displayButton();
+				menu.buttons[theID] = buttonModule.New(theID,"addHTMLTable.Run(this)",["icon","addHTMLTable"]);
+				//menu.buttons[theID].displayButton();
 			}
 
 	}
