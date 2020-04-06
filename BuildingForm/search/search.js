@@ -53,12 +53,14 @@ const searchModule = (function ($, ksAPI) {
     menu.addOption("researchForm",
         "<label>Identifier</label><input id='identifierInput' type='text' onkeyup='searchModule.update()'></input>"+
             "<label>Question Type:</label>"+
-            "<select id='questiontype' onchange='searchModule.update()'><option value='CHECKALL_NO_OTHER'>CHECKALL_NO_OTHER</option>"+
+            "<select id='questiontype' onchange='searchModule.update()'>"+
+            "<option value='CHECKALL_NO_OTHER'>CHECKALL_NO_OTHER</option>"+
             "<option value='HEADER'>HEADER</option>"+
             "<option value='MULTI_LINE'>MULTI_LINE</option>"+
             "<option value='PICK_ONE_WITH_OTHER'>PICK_ONE_WITH_OTHER</option>"+
             "<option value='PICK_ONE_NO_OTHER'>PICK_ONE_NO_OTHER</option>"+
-            "<option value='SINGLE_LINE'>SINGLE_LINE</option></select>"
+            "<option value='SINGLE_LINE'>SINGLE_LINE</option>"+
+            "</select>"
     );
     
 
@@ -117,17 +119,35 @@ const searchModule = (function ($, ksAPI) {
 
             let initialList = vpGetStructure().questionsSorted;
 
+            
             for(let id in initialList){
+
                 let question = structure[initialList[id]];
+                let canReturn = true;
 
-                if(question.identifier){
-                    let string = JSON.stringify(question.identifier);
-                    if(string.indexOf(this.criteria.identifier)>0){
-                        this.resultArray.push(question.id);
+                if(this.criteria.identifier.length>0){
+                    if(question.identifier){
+                        let string = JSON.stringify(question.identifier);
+                        if(!string.indexOf(this.criteria.identifier)>0){
+                            //this.resultArray.push(question.id);
+                            canReturn=false;
+                        }
                     }
+                }
 
+                if(this.criteria.questiontype.length>0){
+                    if(question.identifier){
+                        if(!question.type==this.criteria.questiontype){
+                            canReturn=false;
+                        }
+                    }
+                }
+
+                if(canReturn){
+                    this.resultArray.push(question.id);
                 }
                 
+
             }
             
             this.show();
