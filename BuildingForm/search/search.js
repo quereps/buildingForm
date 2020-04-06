@@ -49,7 +49,7 @@ const searchModule = (function ($, ksAPI) {
 
     let menu = InterfaceModule.addMenu("search","Search","searchModule.Launch()");
 
-    menu.button = buttonModule.New("page","searchModule.Launch()",["icon","search"]);
+    menu.buttons.push(buttonModule.New("page","searchModule.Launch()",["icon","search"]));
     menu.addOption("researchForm",
         "<label>Identifier</label><input id='identifierInput' type='text' onkeyup='searchModule.update()'></input>"+
             "<label>Question Type:</label>"+

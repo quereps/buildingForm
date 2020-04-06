@@ -42,7 +42,7 @@ const createDMTable = (function ($, ksAPI) {
 			let theID = onscreen[i].id.split("questionDivEntireId")[1];			
 				console.log(theID);
 				//buttonModule.New(theID,theID,"addHTMLTable");
-				buttons[theID] = buttonModule.New(theID,"buildingFormsModule.CreateDMTable.Run(this)",["icon","addHTMLTable"]);
+				buttons[theID] = buttonModule.New(theID,"addHTMLTable.Run(this)",["icon","addHTMLTable"]);
 				buttons[theID].displayButton();
 			}
 

@@ -20,10 +20,16 @@ const InterfaceModule  = (function ($, ksAPI) {
 		this.name = name;
 		this.onclick = onclick;
 		this.options = {};
-		this.button = "";
+		this.buttons = [];
 
 		this.addOption = function(id, content){
 			this.options[id] = new optionObj(id, content);
+		}
+
+		this.showButtons= function(){
+			for(item in this.buttons){
+				this.buttons[item].displayButton();
+			}
 		}
 
 		//this.show = function(){
@@ -39,7 +45,7 @@ const InterfaceModule  = (function ($, ksAPI) {
 		this.init = function(){
 			console.log("adding Menu", this.name);
 			//jQuery("#interface .menu").append("<div onclick='"+this.onclick+"' class='"+this.name+"'>"+this.name+"</div>");
-			this.button.displayButton();
+			this.showButtons();
 		}
 
 		this.launch = function(){
