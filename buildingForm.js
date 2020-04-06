@@ -245,6 +245,8 @@ const tableObj = function(name){
 		this.createRows();
 
 		jQuery(this.destination+" #tableOutput").remove();
+		jQuery(this.destination+" #tableOutputText").remove();
+		
 		jQuery(this.destination).append("<div id='tableOutput'>"+this.getHTML()+"</div><div id='tableOutputText'></div>");
 		jQuery(this.destination+" #tableOutputText").text(this.gettxtHTML());
 		this.addOptions();
