@@ -145,7 +145,7 @@ const searchModule = (function ($, ksAPI) {
                     console.log("hiiii4");
                     if(question.type){
                         if(question.type!=this.criteria.questiontype){
-                            console.log(question.identifier, "not in criteria type");
+                            console.log(question, "not in criteria type");
                             canReturn=false;
                         }
                     }
