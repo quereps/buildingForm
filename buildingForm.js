@@ -218,9 +218,9 @@ const tableObj = function(name){
 	
 	this.addOptions = function(){
 		let list = jQuery("#tableOutput tr");
-		
+		jQuery("td.optionsTable").remove();
 		for(let i=0;i<list.length;i++){
-			jQuery(list[i]+" td.optionsTable").remove();
+			
 			console.log(list[i]);
 			let id = jQuery(list[i]).find("th")[0].id;
 			jQuery(list[i]).append("<td class='optionsTable'><div id='remove"+id+"' onclick='buildingFormsModule.createDMTableRemove(this)' class='icon remove'></div></td>");
