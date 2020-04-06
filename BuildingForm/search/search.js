@@ -55,12 +55,12 @@ const searchModule = (function ($, ksAPI) {
             "<label>Question Type:</label>"+
             "<select id='questiontype' onchange='searchModule.update()'>"+
             "<option value=''></option>"+
-            "<option value='CHECKALL_NO_OTHER'>CHECKALL_NO_OTHER</option>"+
-            "<option value='HEADER'>HEADER</option>"+
-            "<option value='MULTI_LINE'>MULTI_LINE</option>"+
-            "<option value='PICK_ONE_WITH_OTHER'>PICK_ONE_WITH_OTHER</option>"+
-            "<option value='PICK_ONE_NO_OTHER'>PICK_ONE_NO_OTHER</option>"+
-            "<option value='SINGLE_LINE'>SINGLE_LINE</option>"+
+            "<option value='CHECKALL_NO_OTHER'>Check All</option>"+
+            "<option value='HEADER'>Section Header</option>"+
+            "<option value='MULTI_LINE'>Multiline</option>"+
+            "<option value='PICK_ONE_WITH_OTHER'>Pick One + Other</option>"+
+            "<option value='PICK_ONE_NO_OTHER'>Pick One</option>"+
+            "<option value='SINGLE_LINE'>Single Line</option>"+
             "</select>"+
             "<label>Nb Answer options</label><input id='nbAnswers' type='number' onchange='searchModule.update()' onkeyup='searchModule.update()'></input>"
     );
