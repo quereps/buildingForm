@@ -30,7 +30,7 @@ const createDMTable = (function ($, ksAPI) {
 
 	const init = function(){
 		   
-		let menu = InterfaceModule.addMenu("addHTMLTable","addHTMLTable","addHTMLTable.Run(this)");
+		let menu = InterfaceModule.addMenu("addHTMLTable","addHTMLTable","createDMTable.Run(this)");
 		menu.buttons.push(buttonModule.New("page","addHTMLTable.Run(this)",["icon","addHTMLTable"]));
 
 		
@@ -42,7 +42,7 @@ const createDMTable = (function ($, ksAPI) {
 				let theID = onscreen[i].id.split("questionDivEntireId")[1];			
 				//console.log(theID);
 				//buttonModule.New(theID,theID,"addHTMLTable");
-				menu.buttons[theID] = buttonModule.New(theID,"addHTMLTable.Run(this)",["icon","addHTMLTable"]);
+				menu.buttons[theID] = buttonModule.New(theID,"createDMTable.Run(this)",["icon","addHTMLTable"]);
 				//menu.buttons[theID].displayButton();
 			}
 
