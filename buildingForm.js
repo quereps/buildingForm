@@ -622,6 +622,9 @@ jQuery("head").append("<style>.hide{display:none !important;}.sum.icon{backgroun
 ".menu div {width: 100%;height: 40px;line-height: 40px;border-bottom: 1px solid grey;}"+
 "table.resultTable {margin: 20px auto !important;background:#dcf0f5;border-radius:8px}"+
 "table.resultTable tr td{border-bottom:2px solid black !important;line-height:40px;min-width:300px;}"+
+"div#researchForm label{display:block;margin:10px 0 5px 0;font-weight:bold;}"+
+"div#researchForm input{width: calc(90% - 10px);line-height:20px;height: 25px !important;border-radius:8px;border:1px solid grey;padding: 0 5px;}"+
+"div#researchForm select{width: 90%;line-height:20px;height: 25px !important;border-radius:8px;border:1px solid grey;}"+
 "</style>");
 
 
