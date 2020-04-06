@@ -3,9 +3,7 @@ const createDMTable = (function ($, ksAPI) {
 	let tableOutput = new tableObj("DMTable");
 	
 	const run = function(a){
-	
-	
-	
+
 		let qelm = jQuery(a).closest(".aDivEntireQuestion");	
 		var question = structure[jQuery(qelm)[0].id.split("Id")[1]];
 			let dmRef = question.question;
@@ -32,6 +30,10 @@ const createDMTable = (function ($, ksAPI) {
 
 	const init = function(){
 		   
+		let menu = InterfaceModule.addMenu("addHTMLTable","addHTMLTable","addHTMLTable.Run(this)");
+		menu.button = buttonModule.New("page","addHTMLTable.Run(this)",["icon","addHTMLTable"]);
+
+		menu.init();
 			//buttonModule.NewType("addHTMLTable","buildingFormsModule.CreateDMTableRun(this)","addHTMLTable");
 			let buttons = {};
 
