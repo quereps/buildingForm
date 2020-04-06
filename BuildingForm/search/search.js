@@ -146,6 +146,9 @@ const searchModule = (function ($, ksAPI) {
                             canReturn=false;
                         }
                     }
+                    else{
+                        canReturn=false;
+                    }
                 }
 
                 if(this.criteria.questiontype.length>0){
