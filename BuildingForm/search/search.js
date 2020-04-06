@@ -114,7 +114,7 @@ const searchModule = (function ($, ksAPI) {
         }
 
         this.filter = function(){
-            console.log("Filtering");
+            console.log("Filtering", this.criteria);
             this.resultArray = [];
 
             let initialList = vpGetStructure().questionsSorted;
