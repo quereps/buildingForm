@@ -72,10 +72,10 @@ const InterfaceModule  = (function ($, ksAPI) {
 		jQuery("#main_frame").prepend("<div id='interface' class='hide'><div class='menu'></div><div class='content'></div><div class='options'></div><div class='close' onclick='InterfaceModule.hide()'></div>");
 	} 
 
-	const show = function(menu){
-		console.log("Menu: ", menu);
-		menu.show();
-	}
+	//const show = function(menu){
+	//	console.log("Menu: ", menu);
+	//	menu.show();
+	//}
 
 	const hide = function(){
 		jQuery('#interface').addClass("hide");
@@ -88,7 +88,7 @@ const InterfaceModule  = (function ($, ksAPI) {
 	return {
 		init:function(){createInterface()},
 		remove:function(){removeInterface()},
-		show:function(menu){show(menu)},
+		//show:function(menu){show(menu)},
 		hide:function(){hide()},
 		addcontent:function(content){addcontent(content)},
 		//addoptions:function(id, content){return new optionObj(id, content);},
