@@ -52,6 +52,7 @@ const searchModule = (function ($, ksAPI) {
     menu.buttons.push(buttonModule.New("page","searchModule.Launch()",["icon","search"],"Search", true));
     menu.addOption("researchForm",
         "<label>Identifier</label><input id='identifierInput' type='text' onkeyup='searchModule.update()'></input>"+
+        "<label>Question Text</label><input id='questionTextInput' type='text' onkeyup='searchModule.update()'></input>"+
             "<label>Question Type:</label>"+
             "<select id='questiontype' onchange='searchModule.update()'>"+
             "<option value=''></option>"+
@@ -108,11 +109,13 @@ const searchModule = (function ($, ksAPI) {
         this.criteria = {
             identifier:"",
             questiontype:"",
+            questionText:"",
             nbAnswers:0
         } 
 
         this.updateCriteria = function(){
             this.criteria.identifier = jQuery("#identifierInput").val();
+            this.criteria.questionText = jQuery("#questionTextInput").val();
             this.criteria.questiontype = jQuery("#questiontype").val();
             this.criteria.nbAnswers = jQuery("#nbAnswers").val();
         }
@@ -153,6 +156,30 @@ const searchModule = (function ($, ksAPI) {
                         canReturn=false;
                     }
                 }
+
+
+                if(this.criteria.questionText.length>0){
+
+                    console.log("hiiii");
+
+                    if(question.questionLabel){
+                        
+                        let string = JSON.stringify(question.questionLabel);
+                        if(string.indexOf(this.criteria.questionText)>0){
+                            console.log("hiiii3");
+                            //this.resultArray.push(question.id);
+                            console.log(question, "contain questionText");
+                            
+                        }
+                        else{
+                            canReturn=false;
+                        }
+                    }
+                    else{
+                        canReturn=false;
+                    }
+                }
+
 
                 if(this.criteria.questiontype.length>0){
                     console.log("hiiii4");
