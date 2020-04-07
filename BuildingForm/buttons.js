@@ -72,7 +72,7 @@ const buttonModule = (function ($, ksAPI) {
 	//const newButton = function(target,click,classlist){
 
 		//console.log("will creae button "+classlist);
-		return new buttonObj(target,click,classlist);
+		//return new buttonObj(target,click,classlist);
 		//buttons[id].displayButton();
 	//}
 	
