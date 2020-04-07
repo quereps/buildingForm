@@ -31,7 +31,7 @@ const buttonModule = (function ($, ksAPI) {
 		}
 
 		this.updateHTML = function(){
-			this.html="<div class='"+this.class+"' onclick='"+this.click+"'><label>"+this.label+"</label></div>";
+			this.html="<div title='"+this.label+"' class='"+this.class+"' onclick='"+this.click+"'><label>"+this.label+"</label></div>";
 		}
 		
 		this.displayButton = function(){
