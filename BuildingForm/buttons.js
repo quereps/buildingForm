@@ -17,7 +17,7 @@ const buttonModule = (function ($, ksAPI) {
 
 		console.log("import isMenu : ",isMenu);
 		
-		this.isMenu = isMenu ? isMenu : true;
+		this.isMenu = isMenu;
 		this.target = target;
 		this.click = click;
 		this.class= "";
@@ -52,7 +52,7 @@ const buttonModule = (function ($, ksAPI) {
 				console.log(this);
 			console.log("isMenu: ",this.isMenu);
 
-			if(this.isMenu==true){
+			if(this.isMenu){
 				jQuery("#interface .menu").append(this.html);
 			}
 			
