@@ -4,7 +4,7 @@ let button = {};
 
 let menu = InterfaceModule.addMenu("search","Search","searchModule.Launch()");
 
-    menu.buttons.push(buttonModule.New("page","firstOfPageModule.Launch()",["icon","page"]));
+    menu.buttons.push(buttonModule.New("page","firstOfPageModule.Launch()",["icon","page"],"Page Selector", true));
 
     var getFirstQuestionOfPages = function(){
 	

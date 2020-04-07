@@ -1,7 +1,7 @@
 const createDMTable = (function ($, ksAPI) {
 
 	let menu = InterfaceModule.addMenu("addHTMLTable","addHTMLTable","createDMTable.Run(this)");
-	menu.buttons.push(buttonModule.New("page","createDMTable.Run(this)",["icon","addHTMLTable"]));
+	menu.buttons.push(buttonModule.New("page","createDMTable.Run(this)",["icon","addHTMLTable"],"Create HTML Table", true));
 	
 	let tableOutput = new tableObj("DMTable");
 	
