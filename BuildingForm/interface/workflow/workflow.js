@@ -1,7 +1,7 @@
 const workflowModule = (function ($, ksAPI) {
 
     let menu = InterfaceModule.addMenu("search","Search","searchModule.Launch()");
-    menu.buttons.push(buttonModule.New("page","workflowModule.Launch()",["icon","workflow"], "WorkFlow Mapping", true);
+    menu.buttons.push(buttonModule.New("page","workflowModule.Launch()",["icon","workflow"], "WorkFlow Mapping", true));
     
         var getWorkflow = function(){
 	
