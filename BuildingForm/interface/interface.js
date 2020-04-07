@@ -45,9 +45,9 @@ const InterfaceModule  = (function ($, ksAPI) {
 		}
 
 		this.launch = function(){
-			console.log("Launching ... ", this.id);
-			jQuery('#interface.'+this.id).removeClass("hide");
-			jQuery('#interface.'+this.id+' .options div').remove();
+			console.log("Launching ... ", 'div#interface.'+this.id);
+			jQuery('div#interface.'+this.id).removeClass("hide");
+			jQuery('div#interface.'+this.id+' .options div').remove();
 
 			if(this.options.length>0){
 				for(let i in this.options){
