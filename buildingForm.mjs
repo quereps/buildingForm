@@ -484,8 +484,8 @@ const init = function(){
 	   //buttonModule.NewType("getScoreFormula","buildingFormsModule.getScoreFormula()","getScoreFormula");
 	   //buttonModule.New("getScoreFormula","page","getScoreFormula");
 
-	   let getScoreFormulaBtn = buttonModule.New("page","buildingFormsModule.getScoreFormula()",["icon","getScoreFormula"]);
-	   getScoreFormulaBtn.displayButton();
+	   //let getScoreFormulaBtn = buttonModule.New("page","buildingFormsModule.getScoreFormula()",["icon","getScoreFormula"]);
+	   //getScoreFormulaBtn.displayButton();
 	   
 	   jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/createDMTable.js", function() {
         console.log("createDMTable.js Script loaded but not necessarily executed.");
