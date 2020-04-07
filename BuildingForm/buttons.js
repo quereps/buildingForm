@@ -75,7 +75,7 @@ const buttonModule = (function ($, ksAPI) {
 	return{
 		//Start: function(settings){init(settings);},
 		//NewType: function(id,click,icon){newType(id,click,icon)},
-		New: function(target,click,classlist){return newButton(target,click,classlist)},
+		New: function(target,click,classlist,label,isMenu){return newButton(target,click,classlist,label,isMenu)},
 		//Show: function(idbutton){show(idbutton)}
 	}
 })(jQuery, ksAPI);
