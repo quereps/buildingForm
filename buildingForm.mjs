@@ -486,8 +486,8 @@ const init = function(){
 
 	  (async () => {
 		  // import module for side effects
-		  await import('./BuildingForm/testImport.js');
-		  hello('world');
+		  await import('./BuildingForm/testImport.js').then(hello('world'));
+		  
 	  })();
 
 
