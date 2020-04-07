@@ -425,26 +425,7 @@ const hideAlwaysModule  = (function ($, ksAPI) {
  
  
  
-const getScoreFormula = function(){ //USE TABLE SOME TIME
 
-		let pagesStructure = vpGetStructure().questionsByVP;
-		
-		let result = "";
-		
-		for(let page in pagesStructure){
-
-			let label = vpGetStructure().questionsMap[pagesStructure[page][0]].name;
-			let firstNum = getRefbyId(pagesStructure[page][0]).split("Q")[1];
-			let lastNum = getRefbyId(pagesStructure[page][pagesStructure[page].length-1]).split("Q")[1];
-			
-			result = result+label+"     -       "+"SCORE("+firstNum+","+lastNum+")/MAX_SCORE("+firstNum+","+lastNum+")*100<br>"
-			console.log(label);
-		}
-
-	InterfaceModule.showInterface("#main_frame",result);
-	
-}
-	
 	
  
  
@@ -526,6 +507,12 @@ const init = function(){
 		jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/interface/workflow/workflow.js", function() {
             console.log("workflow.js Script loaded but not necessarily executed.");
             workflowModule.Start();
+		});
+		
+
+		jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/interface/score/score.js", function() {
+            console.log("score.js Script loaded but not necessarily executed.");
+            scoreModule.Start();
         });
 	   
 		jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/search/search.js", function() {
