@@ -36,8 +36,8 @@ let menu = InterfaceModule.addMenu("search","Search","searchModule.Launch()");
     const init = function(){
         notif("init FirstOf Module");
         //InterfaceModule.addMenu("firstOfPage","firstOfPage","firstOfPageModule.Launch()");
-        button = buttonModule.New("page","firstOfPageModule.Launch()",["icon","pages"]);
-        button.displayButton();
+        //button = buttonModule.New("page","firstOfPageModule.Launch()",["icon","pages"]);
+        menu.buttons.displayButton();
     }
     
     const launch = function(){
