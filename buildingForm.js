@@ -546,7 +546,7 @@ const init = function(){
 
     
 
-	jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/answerRandomly.js", function() {
+	jQuery.getScript("./buildingForm/BuildingForm/answerRandomly.js", function() {
 	   notif("answerRandomly.js Script loaded but not necessarily executed.");
 	   
 		if (typeof listOfText != 'undefined' && listOfText) {
