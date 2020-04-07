@@ -1,3 +1,8 @@
+
+
+import { hello } from './BuildingForm/hello.mjs'; // Or it could be simply `hello.js`
+hello('world');
+
 jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/randexp.js", function() {
    console.log("Randexp Script loaded but not necessarily executed.");
 });
@@ -546,7 +551,7 @@ const init = function(){
 
     
 
-	jQuery.getScript("./buildingForm/BuildingForm/answerRandomly.js", function() {
+	jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/answerRandomly.js", function() {
 	   notif("answerRandomly.js Script loaded but not necessarily executed.");
 	   
 		if (typeof listOfText != 'undefined' && listOfText) {
