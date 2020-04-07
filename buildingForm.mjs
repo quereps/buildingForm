@@ -575,7 +575,6 @@ return {
 	sameKind: function(a){summaryTableModule.sameKind(a)},
 	sumtable: function(a){summaryTableModule.sumtable(a)},
 	getFirstQuestionOfPages: function(){getFirstQuestionOfPages()},
-	getScoreFormula: function(){getScoreFormula()},
 	tableToText: function(a){tableToText(a)}
 }
 
