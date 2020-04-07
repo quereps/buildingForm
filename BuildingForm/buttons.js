@@ -13,8 +13,9 @@ const buttonModule = (function ($, ksAPI) {
 	//}
 	
 	
-	const buttonObj = function(target,click,classlist,label){
+	const buttonObj = function(target,click,classlist,label,isMenu){
 		
+		this.isMenu = isMenu;
 		this.target = target;
 		this.click = click;
 		this.class= "";
@@ -46,7 +47,10 @@ const buttonModule = (function ($, ksAPI) {
 				jQuery("#questionDivEntireId"+target).find(".buildtools").append(this.html);
 			}
 
-			jQuery("#interface .menu").append(this.html);
+			if(this.isMenu){
+				jQuery("#interface .menu").append(this.html);
+			}
+			
 			
 
 		}

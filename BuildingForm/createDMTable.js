@@ -34,7 +34,7 @@ const createDMTable = (function ($, ksAPI) {
 			var onscreen = jQuery(".aDivtypeSingleline, .aDivtypeDropdownList");
 			for(var i=0;i<onscreen.length;i++){
 				let theID = onscreen[i].id.split("questionDivEntireId")[1];			
-				menu.buttons[theID] = buttonModule.New(theID,"createDMTable.Run(this)",["icon","addHTMLTable"]);
+				menu.buttons[theID] = buttonModule.New(theID,"createDMTable.Run(this)",["icon","addHTMLTable"],null,false);
 			}
 			menu.init();
 	}
