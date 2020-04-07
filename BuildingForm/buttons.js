@@ -14,6 +14,8 @@ const buttonModule = (function ($, ksAPI) {
 	
 	
 	const buttonObj = function(target,click,classlist,label,isMenu){
+
+		console.log("import isMenu : ",isMenu);
 		
 		this.isMenu = isMenu ? isMenu : true;
 		this.target = target;
