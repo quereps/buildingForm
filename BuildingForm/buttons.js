@@ -69,12 +69,12 @@ const buttonModule = (function ($, ksAPI) {
 	//	buttonsTypes[id]=new buttonTypeObj(click,icon);
 	//}
 	
-	const newButton = function(target,click,classlist){
+	//const newButton = function(target,click,classlist){
 
-		console.log("will creae button "+classlist);
+		//console.log("will creae button "+classlist);
 		return new buttonObj(target,click,classlist);
 		//buttons[id].displayButton();
-	}
+	//}
 	
 	
 	return{
@@ -82,7 +82,7 @@ const buttonModule = (function ($, ksAPI) {
 		//NewType: function(id,click,icon){newType(id,click,icon)},
 		New: function(target,click,classlist,label,isMenu){
 			console.log("ismenu n return: ", isMenu);
-			return newButton(target,click,classlist,label,isMenu)
+			return new buttonObj(target,click,classlist,label,isMenu)
 		},
 		//Show: function(idbutton){show(idbutton)}
 	}
