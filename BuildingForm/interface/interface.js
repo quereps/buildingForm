@@ -46,25 +46,25 @@ const InterfaceModule  = (function ($, ksAPI) {
 
 		this.launch = function(){
 			console.log("Launching ... ", this.id);
-			jQuery('#interface '+this.id).removeClass("hide");
-			jQuery('#interface '+this.id+' .options div').remove();
+			jQuery('#interface.'+this.id).removeClass("hide");
+			jQuery('#interface.'+this.id+' .options div').remove();
 
 			if(this.options.length>0){
 				for(let i in this.options){
 					this.options[i].init();
 				}
-				jQuery('#interface '+this.id+' .options').show();
+				jQuery('#interface.'+this.id+' .options').show();
 			}
 			else{
-				jQuery('#interface '+this.id+' .options').hide();
+				jQuery('#interface.'+this.id+' .options').hide();
 			}
 			
 		}
 
 		this.show = function(){
 			
-			jQuery('#interface '+this.id+' .content').html(this.content);
-			jQuery('#interface '+this.id).removeClass("hide");
+			jQuery('#interface.'+this.id+' .content').html(this.content);
+			jQuery('#interface.'+this.id).removeClass("hide");
 		}
 
 		return this;
