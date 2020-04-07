@@ -1,7 +1,6 @@
 
 
-import { hello } from './BuildingForm/hello.mjs'; // Or it could be simply `hello.js`
-hello('world');
+
 
 jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/randexp.js", function() {
    console.log("Randexp Script loaded but not necessarily executed.");
@@ -482,6 +481,10 @@ const init = function(){
          href: "https://quereps.github.io/buildingForm/BuildingForm/interface/icons.css"
       });*/
 	
+	  import { hello } from './BuildingForm/hello.mjs'; // Or it could be simply `hello.js`
+	  hello('world');
+
+
 	jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/interface/interface.js", function() {
         console.log("showResult.js Script loaded but not necessarily executed.");
 	   
