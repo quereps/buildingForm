@@ -1,9 +1,8 @@
 const firstOfPageModule = (function ($, ksAPI) {
 
-let button = {};
+//let button = {};
 
-let menu = InterfaceModule.addMenu("search","Search","searchModule.Launch()");
-
+    let menu = InterfaceModule.addMenu("search","Search","searchModule.Launch()");
     menu.buttons.push(buttonModule.New("page","firstOfPageModule.Launch()",["icon","page"],"Page Selector", true));
 
     var getFirstQuestionOfPages = function(){
@@ -37,7 +36,7 @@ let menu = InterfaceModule.addMenu("search","Search","searchModule.Launch()");
         notif("init FirstOf Module");
         //InterfaceModule.addMenu("firstOfPage","firstOfPage","firstOfPageModule.Launch()");
         //button = buttonModule.New("page","firstOfPageModule.Launch()",["icon","pages"]);
-        menu.buttons.displayButton();
+        menu.init();
     }
     
     const launch = function(){

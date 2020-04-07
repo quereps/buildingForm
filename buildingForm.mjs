@@ -484,11 +484,11 @@ const init = function(){
 	  //import { hello } from './BuildingForm/testImport.js'; // Or it could be simply `hello.js`
 	 
 
-	  (async () => {
+	  //(async () => {
 		  // import module for side effects
-		  await import('./BuildingForm/testImport.js').then(hello('world'));
+	//	  await import('./BuildingForm/testImport.js').then(hello('world'));
 		  
-	  })();
+	//  })();
 
 
 	jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/interface/interface.js", function() {
