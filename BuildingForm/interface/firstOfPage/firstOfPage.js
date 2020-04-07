@@ -3,7 +3,7 @@ const firstOfPageModule = (function ($, ksAPI) {
 //let button = {};
 
     let menu = InterfaceModule.addMenu("search","Search","searchModule.Launch()");
-    menu.buttons.push(buttonModule.New("page","firstOfPageModule.Launch()",["icon","page"],"Page Selector", true));
+    menu.buttons.push(buttonModule.New("page","firstOfPageModule.Launch()",["icon","pages"],"Page Selector", true));
 
     var getFirstQuestionOfPages = function(){
 	
