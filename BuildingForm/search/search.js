@@ -111,7 +111,7 @@ const searchModule = (function ($, ksAPI) {
             identifier:"",
             questiontype:"",
             questionText:"",
-            pageNb,
+            pageNb:null,
             nbAnswers:0
         } 
 
