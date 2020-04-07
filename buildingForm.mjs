@@ -481,8 +481,14 @@ const init = function(){
          href: "https://quereps.github.io/buildingForm/BuildingForm/interface/icons.css"
       });*/
 	
-	  import { hello } from './BuildingForm/testImport.js'; // Or it could be simply `hello.js`
-	  hello('world');
+	  //import { hello } from './BuildingForm/testImport.js'; // Or it could be simply `hello.js`
+	 
+
+	  (async () => {
+		  // import module for side effects
+		  await import('./BuildingForm/testImport.js');
+		  hello('world');
+	  })();
 
 
 	jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/interface/interface.js", function() {
