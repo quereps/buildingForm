@@ -47,6 +47,7 @@ const buttonModule = (function ($, ksAPI) {
 				jQuery("#questionDivEntireId"+target).find(".buildtools").append(this.html);
 			}
 
+				console.log(this);
 			console.log("isMenu: ",this.isMenu);
 
 			if(this.isMenu==true){
