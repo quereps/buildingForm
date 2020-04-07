@@ -257,23 +257,6 @@ const tableObj = function(name){
 
 const buildingFormsModule = (function ($, ksAPI) {
 
-var getWorkflow = function(){
-	
-	var identifierList = Object.keys(vpGetIdentifiersMap());
-	
-	var sortie = "";
-	
-	for(var i in identifierList){
-		
-		sortie=sortie+"<br>"+identifierList[i]+"="+identifierList[i];
-		
-	}
-	console.log("test");
-	InterfaceModule.showInterface("#main_frame",sortie);
-	
-}
-
-
 
 
 
@@ -524,6 +507,11 @@ const init = function(){
 		jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/interface/firstOfPage/firstOfPage.js", function() {
             console.log("firstOfPage.js Script loaded but not necessarily executed.");
             firstOfPageModule.Start();
+		});
+		
+		jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/interface/workflow/workflow.js", function() {
+            console.log("workflow.js Script loaded but not necessarily executed.");
+            workflowModule.Start();
         });
 	   
 		jQuery.getScript("https://quereps.github.io/buildingForm/BuildingForm/search/search.js", function() {
