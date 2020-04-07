@@ -52,7 +52,14 @@ const InterfaceModule  = (function ($, ksAPI) {
 			for(let i in this.options){
 				this.options[i].init();
 			}
+
 			
+			
+		}
+
+		this.show = function(){
+			jQuery('#interface .content').html(this.content);
+			jQuery('#interface').removeClass("hide");
 		}
 
 			console.log("initMenu",this);
@@ -67,8 +74,7 @@ const InterfaceModule  = (function ($, ksAPI) {
 
 	const show = function(menu){
 		console.log("Menu: ", menu);
-		jQuery('#interface').removeClass("hide");
-		jQuery('#interface .content').html(this.content);
+		menu.show();
 	}
 
 	const hide = function(){
