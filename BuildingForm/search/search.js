@@ -63,7 +63,8 @@ const searchModule = (function ($, ksAPI) {
             "<option value='PICK_ONE_NO_OTHER'>Pick One</option>"+
             "<option value='SINGLE_LINE'>Single Line</option>"+
             "</select>"+
-            "<label>Nb Answer options</label><input id='nbAnswers' type='number' onchange='searchModule.update()' onkeyup='searchModule.update()'></input>"
+            "<label>Nb Answer options</label><input id='nbAnswers' type='number' onchange='searchModule.update()' onkeyup='searchModule.update()'></input>"+
+            "<label>On Page #</label><input id='pageNb' type='number' onchange='searchModule.update()' onkeyup='searchModule.update()'></input>"
     );
     
 
@@ -110,6 +111,7 @@ const searchModule = (function ($, ksAPI) {
             identifier:"",
             questiontype:"",
             questionText:"",
+            pageNb,
             nbAnswers:0
         } 
 
@@ -118,6 +120,7 @@ const searchModule = (function ($, ksAPI) {
             this.criteria.questionText = jQuery("#questionTextInput").val();
             this.criteria.questiontype = jQuery("#questiontype").val();
             this.criteria.nbAnswers = jQuery("#nbAnswers").val();
+            this.criteria.pageNb = jQuery("#pageNb").val();
         }
 
         this.filter = function(){
@@ -130,23 +133,14 @@ const searchModule = (function ($, ksAPI) {
             for(let id in initialList){
 
                 let question = structure[initialList[id]];
-                console.log(question);
                 let canReturn = true;
 
                 if(this.criteria.identifier.length>0){
-
-                    console.log("hiiii");
-
                     if(question.identifier){
                         
                         let string = JSON.stringify(question.identifier);
-                        console.log("string", string);
-                        console.log("index", string.indexOf(this.criteria.identifier));
                         if(string.indexOf(this.criteria.identifier)>0){
-                            console.log("hiiii3");
-                            //this.resultArray.push(question.id);
                             console.log(question, "contain identifier");
-                            
                         }
                         else{
                             canReturn=false;
@@ -202,6 +196,14 @@ const searchModule = (function ($, ksAPI) {
                     }
                 }
 
+                if(this.criteria.pageNb){
+                    
+                    if(question.pageNum){
+                        if(question.pageNum!=this.criteria.pageNb){
+                            canReturn=false;
+                        }
+                    }
+                }
 
                 console.log(canReturn);
 
