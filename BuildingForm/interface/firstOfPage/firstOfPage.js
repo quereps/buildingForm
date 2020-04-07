@@ -2,6 +2,10 @@ const firstOfPageModule = (function ($, ksAPI) {
 
 let button = {};
 
+let menu = InterfaceModule.addMenu("search","Search","searchModule.Launch()");
+
+    menu.buttons.push(buttonModule.New("page","firstOfPageModule.Launch()",["icon","page"]));
+
     var getFirstQuestionOfPages = function(){
 	
         var firstpageList = [];
@@ -23,7 +27,8 @@ let button = {};
         }
     
         //InterfaceModule.showInterface("#main_frame",firstpageList);
-        InterfaceModule.create();
+        menu.content=firstpageList;
+        menu.show();
         //InterfaceModule.addoptions("researchForm",search.form);
     
     }

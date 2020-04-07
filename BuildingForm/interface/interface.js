@@ -33,19 +33,12 @@ const InterfaceModule  = (function ($, ksAPI) {
 			}
 		}
 
-		//this.show = function(){
-		//	jQuery('#interface').removeClass("hide");
-		//	jQuery('#interface .options div').remove();
-		//}
-
 		this.hide = function(){
 			jQuery('#interface .options div').remove();
 			jQuery('#interface .content').empty();
 		}
 
 		this.init = function(){
-			console.log("adding Menu", this.name);
-			//jQuery("#interface .menu").append("<div onclick='"+this.onclick+"' class='"+this.name+"'>"+this.name+"</div>");
 			this.showButtons();
 		}
 
@@ -75,6 +68,7 @@ const InterfaceModule  = (function ($, ksAPI) {
 	const show = function(menu){
 		console.log("Menu: ", menu);
 		jQuery('#interface').removeClass("hide");
+		jQuery('#interface .content').html(this.content);
 	}
 
 	const hide = function(){
@@ -84,20 +78,6 @@ const InterfaceModule  = (function ($, ksAPI) {
 	const removeInterface = function(){
 		jQuery('#interface').remove();
 	}
-
-	//const addcontent = function(a){
-	//	jQuery('#interface .content').append("<div>"+a+"</div>");
-	//}
-
-	//const addoptions = function(id, content){
-	//	options[id] = new optionObj(id, content);
-		//options[id].init();
-	//}
-
-	//const addMenu = function(id, name, onclick){
-	//	new menuObj(id, name, onclick);
-		//menu[id].init();
-	//}
 	
 	return {
 		init:function(){createInterface()},
