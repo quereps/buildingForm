@@ -13,12 +13,13 @@ const buttonModule = (function ($, ksAPI) {
 	//}
 	
 	
-	const buttonObj = function(target,click,classlist){
+	const buttonObj = function(target,click,classlist,label){
 		
 		this.target = target;
 		this.click = click;
 		this.class= "";
 		this.html="";
+		this.label=label;
 
 		this.updateclass = function(){
 			let toreturn = "";
@@ -29,7 +30,7 @@ const buttonModule = (function ($, ksAPI) {
 		}
 
 		this.updateHTML = function(){
-			this.html="<div class='"+this.class+"' onclick='"+this.click+"'></div>";
+			this.html="<div class='"+this.class+"' onclick='"+this.click+"'><label>"+this.label+"</label></div>";
 		}
 		
 		this.displayButton = function(){
@@ -44,6 +45,10 @@ const buttonModule = (function ($, ksAPI) {
 			else{
 				jQuery("#questionDivEntireId"+target).find(".buildtools").append(this.html);
 			}
+
+			jQuery("#interface .menu").append(this.html);
+			
+
 		}
 		
 		console.log("button :   ",this);
