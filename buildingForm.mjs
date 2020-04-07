@@ -481,7 +481,7 @@ const init = function(){
          href: "https://quereps.github.io/buildingForm/BuildingForm/interface/icons.css"
       });*/
 	
-	  import { hello } from './BuildingForm/hello.mjs'; // Or it could be simply `hello.js`
+	  import { hello } from './BuildingForm/testImport.js'; // Or it could be simply `hello.js`
 	  hello('world');
 
 
