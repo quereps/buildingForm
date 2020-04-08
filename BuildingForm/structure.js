@@ -35,8 +35,8 @@ const getStructure = function(){
 			}
 			
 			this.type = vpGetStructure().questionsMap[this.id].type;
-			this.position = vpGetStructure().questionsSorted.indexOf(this.id);
-			this.nextQuestionType = vpGetStructure().questionsSorted[this.position+1];
+			this.position = vpGetStructure().questionsSorted.indexOf(JSON.stringify(this.id));
+			this.nextQuestionId = vpGetStructure().questionsSorted[this.position+1];
 			
 			return this;
 		}
