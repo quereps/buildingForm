@@ -35,7 +35,7 @@ const getStructure = function(){
 			}
 			
 			this.type = vpGetStructure().questionsMap[this.id].type;
-			this.position = vpGetStructure().questionsSorted.indexOf(JSON.stringify(this.id));
+			this.position = vpGetStructure().questionsSorted.indexOf(JSON.parse(this.id));
 			this.nextQuestionId = vpGetStructure().questionsSorted[this.position+1];
 			
 			return this;
