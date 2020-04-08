@@ -19,7 +19,7 @@ const InterfaceModule  = (function ($, ksAPI) {
 		this.id = id;
 		this.name = name;
 		this.onclick = onclick;
-		this.options = [];
+		this.options = {};
 		this.buttons = [];
 		this.content = "";
 
@@ -49,7 +49,7 @@ const InterfaceModule  = (function ($, ksAPI) {
 			jQuery('div#interface').removeClass("hide");
 			jQuery('div#interface .options div').remove();
 
-			if(this.options.length>0){
+			if(Object.keys(this.options).length>0){
 				for(let i in this.options){
 					this.options[i].init();
 				}
