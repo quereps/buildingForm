@@ -22,6 +22,7 @@ const searchModule = (function ($, ksAPI) {
         this.questionIdList = questionIdArray;
         this.name = "",
         this.questions = [];
+        this.questionTypes = [];
 
         for(let qid in questionIdList){
             this.questions.push(structure[this.questionIdList[qid]]);
@@ -44,7 +45,7 @@ const searchModule = (function ($, ksAPI) {
             for(let qobj in this.questions){
                 toReturn.push(this.questions[qobj][prop]);
             }
-            
+
             return presentData(toReturn);
 
         }
@@ -121,8 +122,8 @@ const searchModule = (function ($, ksAPI) {
         
         this.show = function(){
             console.log("creating results");
-            result[current] = new newResult("interface",this.resultArray);
-            result[current].show("bestRef");
+            result["current"] = new newResult("interface",this.resultArray);
+            result["current"].show("bestRef");
         };
         
         this.criteria = {
