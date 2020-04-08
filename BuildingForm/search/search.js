@@ -21,17 +21,34 @@ const searchModule = (function ($, ksAPI) {
 		this.id = idTarget;
         this.questionIdList = questionIdArray;
         this.name = "",
-        
+        this.questions = [];
+
+        for(let qid in questionIdList){
+            this.questions.push(structure[this.questionIdList[qid]]);
+        }
+
+
+        //let result = objArray.map(a => a.foo);
+
 		this.getAData = function(prop){ // return a specific prop of the question object (label, identifier, Qref)
 			let toReturn = [];
-			
+			/*
 			for(questionId in this.questionIdList){
 				let question = structure[this.questionIdList[questionId]];
 				toReturn.push(question[prop]);
 			}
 			
-			return presentData(toReturn);
+            return presentData(toReturn);
+             */
+
+            for(let qobj in this.questions){
+                toReturn.push(this.questions[qobj][prop]);
+            }
+            
+            return presentData(toReturn);
+
         }
+       
         
 		if(jQuery("#resultBtn").length==0){
 			menu.addResultButtons(this.buttons);
@@ -41,7 +58,8 @@ const searchModule = (function ($, ksAPI) {
         this.show = function(settings){
             jQuery("#"+this.id+" .content").html(this.getAData(settings));
         }
-		
+        
+        console.log("newResult: ",this);
 		return this;
     }
     
