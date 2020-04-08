@@ -20,6 +20,7 @@ const searchModule = (function ($, ksAPI) {
 
 		this.id = idTarget;
         this.questionIdList = questionIdArray;
+        this.name = "",
         
 		this.getAData = function(prop){ // return a specific prop of the question object (label, identifier, Qref)
 			let toReturn = [];
@@ -68,9 +69,9 @@ const searchModule = (function ($, ksAPI) {
     );
     
 
-    menu.labelBtn = "<button class='searchButton' onClick='searchModule.Refresh(\"questionLabel\")'>Labels</button>";
-    menu.bestRefBtn = "<button class='searchButton' onClick='searchModule.Refresh(\"bestRef\")'>Ref</button>";
-    menu.pipingBtn = "<button class='searchButton' onClick='searchModule.Refresh(\"piping\")'>Piping</button>";
+    menu.labelBtn = "<button class='searchButton' onClick='searchModule.Refresh(\"current\",\"questionLabel\")'>Labels</button>";
+    menu.bestRefBtn = "<button class='searchButton' onClick='searchModule.Refresh(\"current\",\"bestRef\")'>Ref</button>";
+    menu.pipingBtn = "<button class='searchButton' onClick='searchModule.Refresh(\"current\",\"piping\")'>Piping</button>";
 		
     menu.resultButtons = [menu.labelBtn,menu.bestRefBtn,menu.pipingBtn];
 
@@ -101,10 +102,9 @@ const searchModule = (function ($, ksAPI) {
         }
         
         this.show = function(){
-            //menu.addResultButtons
             console.log("creating results");
-            result = new newResult("interface",this.resultArray);
-            result.show("bestRef");
+            result[current] = new newResult("interface",this.resultArray);
+            result[current].show("bestRef");
         };
         
         this.criteria = {
@@ -222,68 +222,12 @@ const searchModule = (function ($, ksAPI) {
     }
 
 
-  /*  const identifier = function(a){
-
-        console.log(a);
-        let result=[];
-        for(var i in structure){
-            let string = JSON.stringify(structure[i].questionLabel);
-            console.log("string: "+string);
-            if(string && string.indexOf(a)>0){
-                result.push(structure[i]);
-            }
-        }
-        result.sort();
-        console.log(result);
-        //searchResultModule.createResult("interface",result);
-    }
-
-    const getQIdentifierThatContain = function(a,b){
-        var result=[];
-        var listOfidentifiers = Object.keys(vpGetIdentifiersMap());
-        
-        for(var i in listOfidentifiers){
-            var string = JSON.stringify(listOfidentifiers[i]);
-
-            if(b){
-                if(string.indexOf(a)>0 && string.indexOf(b)>0){
-                    result.push(listOfidentifiers[i]);
-                }
-            }
-            else{
-                if(string.indexOf(a)>0){
-                    result.push(listOfidentifiers[i]);
-                }
-            }
-        }
-
-        result.sort();
-        console.log(result);
-        tableToConsole(result);
-    }
-
-
-    const sameKind = function(a){
-	
-		let id = a.id.split("sameKind")[1];
-		let type = vpGetStructure().questionsMap[id].type;
-		let answers = [];
-		
-		let answersList = vpGetStructure().questionsMap[id].answers;
-		for(let i in answersList){
-			answers.push(answersList[i].name);
-		}
-
-		buildingFormsModule.showResult("#main_frame",buildingFormsModule.tableToText(getSimilarQuestion(type,answers,"ref")));
-	
-	}*/
-
     
 	return{
         Start:function(){search = new searchObj();},
         Launch:function(){menu.launch();},
         update:function(){search.update();},
-        Refresh:function(settings){result.show(settings)},
+        Refresh:function(obj,settings){result[obj].show(settings)},
 	}
 	
 })(jQuery, ksAPI);
