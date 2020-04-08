@@ -19,7 +19,7 @@ const InterfaceModule  = (function ($, ksAPI) {
 		this.id = id;
 		this.name = name;
 		this.onclick = onclick;
-		this.options = {};
+		this.options = [];
 		this.buttons = [];
 		this.content = "";
 
