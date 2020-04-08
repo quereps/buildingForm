@@ -40,31 +40,30 @@ const InterfaceModule  = (function ($, ksAPI) {
 
 		this.init = function(){
 			console.log("init interface "+this.id);
-			jQuery("#main_frame").prepend("<div id='interface' class='hide "+this.id+"'><div class='menu'></div><div class='content'></div><div class='options'></div><div class='close' onclick='InterfaceModule.hide()'></div>");
+			jQuery("#main_frame").prepend("<div id='interface' class='hide'><div class='menu'></div><div class='content'></div><div class='options'></div><div class='close' onclick='InterfaceModule.hide()'></div>");
 			this.showButtons();
 		}
 
 		this.launch = function(){
-			console.log("Launching ... ", 'div#interface.'+this.id);
-			jQuery('div#interface.'+this.id).removeClass("hide");
-			jQuery('div#interface.'+this.id+' .options div').remove();
+			console.log("Launching ... "+this.id);
+			jQuery('div#interface').removeClass("hide");
+			jQuery('div#interface .options div').remove();
 
 			if(this.options.length>0){
 				for(let i in this.options){
 					this.options[i].init();
 				}
-				jQuery('#interface.'+this.id+' .options').show();
+				jQuery('#interface .options').show();
 			}
 			else{
-				jQuery('#interface.'+this.id+' .options').hide();
+				jQuery('#interface .options').hide();
 			}
 			
 		}
 
 		this.show = function(){
-			
-			jQuery('#interface.'+this.id+' .content').html(this.content);
-			jQuery('#interface.'+this.id).removeClass("hide");
+			jQuery('#interface .content').html(this.content);
+			jQuery('#interface').removeClass("hide");
 		}
 
 		return this;
