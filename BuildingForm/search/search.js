@@ -28,7 +28,7 @@ const searchModule = (function ($, ksAPI) {
             this.questions.push(structure[this.questionIdList[qid]]);
         }
 
-        this.questionTypes = [...new Set(this.questions.map(function(a){return a.id}))];
+        this.questionTypes = [...new Set(this.questions.map(function(a){return a.type}))];
         //temp1.questions.map(function(a){return a.id})
 
 		this.getAData = function(prop){ // return a specific prop of the question object (label, identifier, Qref)
