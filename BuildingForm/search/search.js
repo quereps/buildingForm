@@ -24,7 +24,7 @@ const searchModule = (function ($, ksAPI) {
         this.questions = [];
         this.questionTypes = [];
 
-        for(let qid in questionIdList){
+        for(let qid in this.questionIdList){
             this.questions.push(structure[this.questionIdList[qid]]);
         }
 
