@@ -41,7 +41,7 @@ const getSWApi = function(type,before,nb,after){
 		let last=false;
 		for(let i=0;i<=nb;i++){
 			fetch('https://swapi.dev/api/'+type+'/'+Math.floor(Math.random() * 40), {
-				mode: 'cors'
+				//mode: 'cors'
 			})
 				.then(function(response) {
 					responses.push(response);
